@@ -1,0 +1,2 @@
+# -*- sh -*-
+export PATH=${PATH}:/home/isg/bin:/sbin:/usr/sbin:/usr/local/bin/sbin:${HOME}/bin

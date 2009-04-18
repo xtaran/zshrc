@@ -1,0 +1,95 @@
+# -*- sh -*-
+#################
+# abe's .alias' #
+#################
+
+### DEBUG ###
+
+#set -x
+
+### Short-Cuts ###
+
+alias	l=less
+#alias	md='mkdir -p \!:1; cd \!:1'
+alias	nsl=nslookup
+alias	o='$PAGER'
+alias 	perlv='perl -le "use \!^; print \\\$\!^::VERSION;"'
+#alias	q=exit
+alias	qu='quota -v'
+#alias	rm='rm -r'
+alias	t=touch
+alias	xl=xlock
+alias	tn=telnet
+alias	http='telnet \!* 80'
+
+alias	deurl='$HOME/bin/url_decode.pl'
+alias	c=cat
+alias	cd..='cd ..'
+alias -g ...=../..
+alias -g ....=../../..
+alias	eg=egrep
+alias	g=fgrep
+#alias	lpr='lpr \!* ; lpq'
+alias	m=mutt
+#alias	mdh='mkdir -p \!:1; cd \!:1'
+#alias	\-=popd
+#alias	\+=pushd
+#alias	\-1='pushd -1'
+alias	\+1='pushd +1'
+#alias	\-2='pushd -2'
+alias	\+2='pushd +2'
+alias	\.=source
+#alias	~="cd ~"
+#alias	/="cd ~"
+alias	ßh=ssh
+alias	ßhe=sshe
+alias	mx=nslookup -sil -q=mx
+alias	ns=nslookup -sil -q=ns
+
+
+### DOS-Aliasse und Aehnliches ###
+alias	cls=clear
+#alias	del='rm -ir'
+#alias   dir='ls -lF'
+#alias   dira='ls -alF'
+alias	ff='find . -name \!*'
+alias	quit=exit
+
+### Set ###
+alias   setvim='export EDITOR=vim VISUAL=vim'
+alias   setemacs='export EDITOR=emacsclient VISUAL=emacsclient'
+#alias   edit='$editor'
+alias   vt100='export TERM=vt100'
+
+### Gags ###
+#alias	y='echo "Hallo, sind wir noch wach, oder sind wir wieder auf die Y-Taste gefallen? ;-)"'
+
+### ls Erweiterungen ###
+alias	ls='ls -F --color=auto'
+alias	la='ls -A'
+alias	ll='ls -Al'
+alias	ld='ls -dAl'
+
+# Teppfihler
+alias	amek=make
+alias	nls=nsl
+#alias	sl=ls
+alias	les=less
+alias	lesss=less
+
+### Laden weiterer Aliasse
+
+#alias	xal='source ~/.Xalias'
+
+#if ( -f $home/.alias.mtools ) then
+#  source $home/.alias.mtools
+#endif
+#if ( -f $home/.alias.wapua ) then
+#  source $home/.alias.wapua
+#endif
+
+alias ooo=openoffice
+alias OOo=openoffice
+alias acs='apt-cache show'
+alias acp='apt-cache policy'
+alias ac/='apt-cache search'

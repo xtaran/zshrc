@@ -1,0 +1,13 @@
+# -*- sh -*-
+# /usr/share/doc/zsh/examples/ssh_completion.gz
+# /usr/share/doc/zsh/examples/ssh_completion2.gz
+# http://zshwiki.org/CompletionExamples
+
+#hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[0-9]*}%%\ *}%%,*})
+#zstyle ':completion:*:hosts' hosts $hosts
+
+[ -f ~/.ssh/config ] && : ${(A)ssh_config_hosts:=${${${${(@M)${(f)"$(<~/.ssh/config)"}:#Host *}#Host }:#*\**}:#*\?*}}
+[ -f ~/.ssh/known_hosts ] && : ${(A)ssh_known_hosts:=${${${(f)"$(<$HOME/.ssh/known_hosts)"}%%\ *}%%,*}}
+
+zstyle ':completion:*:*:*' hosts $ssh_config_hosts $ssh_known_hosts
+

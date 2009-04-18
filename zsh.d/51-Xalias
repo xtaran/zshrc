@@ -1,0 +1,26 @@
+# -*- sh -*-
+#################
+# abe's .Xalias #
+#################
+
+if [ "$DISPLAY" != "" ]; then
+
+### Short-Cuts ###
+#alias   skunkzilla='/usr/lib/jdk1.3.1/bin/java -jar /usr/src/apps/skunkdav-1.0.2.4.jar'
+#alias	root="xterm -T 'root@abe.i.ecos.de (bash)' -e ssh root@localhost"
+#alias	xmmstail="xterm -fn '-*-fixed-*-r-*-*-8-*-*-*-*-*-*-*' +sb -geom 26x19+1323+899 -e tail -f ~abe/.xmms_pls"
+#alias	n=netscape
+#alias	nets=netscape
+#alias	n4=communicator
+#alias	nets4=communicator
+#alias	netscape4=communicator
+alias	xl=xlock
+alias	xr=xrsh
+alias	xs=xssh
+
+### X-Aliase ###
+#alias	xterm='sleep 1;\xterm -geometry 80x25 -fn fixed -ut \!* &'
+alias	irc="$HOME/bin/ircstart.sh"
+alias	xv='xv \* &'
+
+fi

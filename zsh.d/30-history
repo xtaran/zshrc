@@ -1,0 +1,4 @@
+# -*- sh -*-
+HISTSIZE=512
+SAVEHIST=512
+HISTFILE=$HOME/.zsh_history

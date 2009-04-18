@@ -1,0 +1,10 @@
+# -*- sh -*-
+prompt1="%S!%h Z%i %(?..%{[31m%})?%?%(?..%{[m%}%S) L%L%s %B%n@%m:%y%b (%U%N%u $ZSH_VERSION) %B%* [%5~] %(!.#.>)%b "
+prompt=$prompt1
+
+if [ "$DISPLAY" != "" ]; then 
+    #function chpwd { print -nP "\033]0;%n@%m$DISPLAY [%5~]\007" }
+    function precmd { print -nP "\033]0;%n@%m$DISPLAY [%5~] > $0\007" }
+    function preexec { print -nP "\033]0;%n@%m$DISPLAY [%5~] > $1\007" }
+fi
+
