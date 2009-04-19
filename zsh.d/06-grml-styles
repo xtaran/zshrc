@@ -1,0 +1,2 @@
+# -*- sh -*-
+zstyle ':vcs_info:*' disable bzr cdv mtn svk tla
