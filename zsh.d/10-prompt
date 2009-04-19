@@ -1,12 +1,12 @@
 # -*- sh -*-
 if (( EUID != 0 )); then
     USERBEGIN="%B"
-    USEREEND="%b"
+    USEREND="%b"
     BLOCKBEGIN="%S"
     BLOCKEND="%s"
 else
     USERBEGIN="${RED}"
-    USEREEND="${NO_COLOUR}"
+    USEREND="${NO_COLOUR}"
     BLOCKBEGIN="%B"
     BLOCKEND="%b"
 fi
