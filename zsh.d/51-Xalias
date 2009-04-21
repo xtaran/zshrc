@@ -21,6 +21,7 @@ alias	xs=xssh
 ### X-Aliase ###
 #alias	xterm='sleep 1;\xterm -geometry 80x25 -fn fixed -ut \!* &'
 alias	irc="$HOME/bin/ircstart.sh"
-alias	xv='xv \* &'
+#alias	xv='xv \* &'
+alias fehxv='feh -ZFdxpr'
 
 fi
