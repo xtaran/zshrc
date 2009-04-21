@@ -2,7 +2,7 @@
 # Do not warn about old skel dot-files anymore
 GRML_WARN_SKEL=0
 
-if [ -n "`which domainname`" -a `domainname` = "phys.ethz.ch" ]; then
+if [ -n "`which domainname`" ] && [ `domainname` = "phys.ethz.ch" ]; then
     BATTERY=0
 else
     BATTERY=1
