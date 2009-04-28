@@ -1,0 +1,3 @@
+# -*- sh -*-
+# Removes bindkey ' '   magic-space    # also do history expansion on space
+bindkey ' ' self-insert
