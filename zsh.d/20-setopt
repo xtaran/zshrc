@@ -1,6 +1,7 @@
 # -*- sh -*-
 setopt \
     APPEND_HISTORY \
+    AUTO_CD \
     AUTO_LIST \
     AUTO_MENU \
     AUTO_PARAM_SLASH \
@@ -8,6 +9,8 @@ setopt \
     AUTO_REMOVE_SLASH \
     BANG_HIST \
  NO_BASH_AUTO_LIST \
+    BEEP \
+    COMPLETE_IN_WORD \
     CSH_JUNKIE_HISTORY \
     CSH_JUNKIE_LOOPS \
  NO_CSH_JUNKIE_QUOTES \
@@ -38,5 +41,6 @@ setopt \
  NO_OVERSTRIKE \
     PUSHD_IGNORE_DUPS \
     PUSHD_MINUS \
+    RM_STAR_WAIT \
  NO_SHARE_HISTORY \
  NO_SH_FILE_EXPANSION
