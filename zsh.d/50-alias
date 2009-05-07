@@ -8,13 +8,6 @@
 ### DEBUG ###
 #set -x
 
-
-perlv()	{ perl -le "use $1; print "'$'"$1"'::VERSION;' }
-http()	{ telnet $1 80 }
-ff()    { find . -name "$@" }
-ffi()	{ find . -iname "$@" }
-#lpr()   { lpr "$@"; lpq }
-
 # Aliases starting with special characters
 -() { cd - }
 _() { popd "$@" }
@@ -27,6 +20,8 @@ alias   ....='cd ../../..'
 
 # One character aliases
 alias	c=cat
+unfunction d
+alias   d='dirs -v'
 alias	g='fgrep --color=auto'
 alias   l=less
 alias	m=mutt
@@ -36,6 +31,7 @@ alias	t=touch
 
 # Two character aliases
 alias	eg='egrep --color=auto'
+        ff() { find . -name "$@" }
 alias	gr='grep --color=auto'
 alias	qu='quota -v'
 alias	tn=telnet
@@ -53,6 +49,8 @@ alias	ll='ls -AlF'
 alias	acs='apt-cache show'
 alias	acp='apt-cache policy'
 alias	ac/='apt-cache search'
+        ffi() { find . -iname "$@" }
+        #lpr() { lpr "$@"; lpq }
 alias   ino='inotail -f'
 alias	cls=clear # Yeah, that's from DOS
 alias	nsl=nslookup
@@ -61,10 +59,12 @@ alias	OOo=openoffice
 
 # Four character aliases
 alias	assh=autossh
+	http() { telnet $1 80 }
 alias	root='ssh root@localhost'
 
 # Five character aliases
 alias	deurl='$HOME/bin/url_decode.pl'
+	perlv()	{ perl -le "use $1; print "'$'"$1"'::VERSION;' }
 
 # Compose key errors
 alias	ßh=ssh
