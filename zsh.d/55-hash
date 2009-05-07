@@ -1,0 +1,7 @@
+# -*- sh -*-
+
+if [ `hostname -s` = wiggis ]; then
+    hash -d imap=/var/imap/a/abe
+fi
+
+
