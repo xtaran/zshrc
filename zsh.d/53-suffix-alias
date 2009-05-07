@@ -1,0 +1,35 @@
+# -*- sh -*-
+
+# TLDs
+alias -s com=$BROWSER
+alias -s de=$BROWSER
+alias -s ch=$BROWSER
+alias -s at=$BROWSER
+alias -s net=$BROWSER
+alias -s org=$BROWSER
+# Conflict with Emacs' org-mode?
+alias -s org=$BROWSER
+
+# Documents
+alias -s pdf=xpdf
+alias -s txt='emacsclient -a emacs'
+
+# Videos
+alias -s flv=mplayer
+alias -s mp4=mplayer
+alias -s avi=mplayer
+alias -s mpg=mplayer
+alias -s wmv=mplayer
+
+# Audio
+alias -s mp3=mpg123
+alias -s ogg=ogg123
+alias -s flac=ogg123
+
+# Images. xv doesn't work well with ratpoison, so we use feh on my EeePC
+if [ `hostname -s` = nemo ]; then
+    alias -s gif=feh png=feh jpg=feh jpeg=feh
+else
+    alias -s gif=xv png=xv jpg=xv jpeg=xv
+fi
+    
