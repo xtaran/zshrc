@@ -1,0 +1,3 @@
+# -*- sh -*-
+
+ZDOTDIR=${HOME}/.zsh
