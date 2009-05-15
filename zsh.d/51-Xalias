@@ -5,7 +5,7 @@
 
 if [ "$DISPLAY" != "" ]; then
     alias	xl=xlock
-                xv() { xv "$@" & }
+                xv() { /usr/bin/xv "$@" & }
 
     alias	xrsh=xterm -e rsh
     alias	xssh=xterm -e ssh
