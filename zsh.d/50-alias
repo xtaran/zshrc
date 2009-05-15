@@ -9,8 +9,8 @@
 #set -x
 
 # Aliases starting with special characters
--() { cd - }
-_() { popd "$@" }
+#-() { cd - }
+-() { popd "$@" }
 +() { pushd "$@" }
 -1 -2 -3 -4 -5 -6 -7 -8 -9 +1 +2 +3 +4 +5 +6 +7 +8 +9() { pushd $0 }
 
@@ -20,7 +20,7 @@ alias   ....='cd ../../..'
 
 # One character aliases
 alias	c=cat
-unfunction d
+#unfunction d
 alias   d='dirs -v'
 alias	g='fgrep --color=auto'
 alias   l=less
@@ -51,8 +51,9 @@ alias	acp='apt-cache policy'
 alias	ac/='apt-cache search'
         ffi() { find . -iname "$@" }
         #lpr() { lpr "$@"; lpq }
-alias   ino='inotail -f'
+alias	cd-=cd -
 alias	cls=clear # Yeah, that's from DOS
+alias   ino='inotail -f'
 alias	nsl=nslookup
 alias	ooo=openoffice
 alias	OOo=openoffice
