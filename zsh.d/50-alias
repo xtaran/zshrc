@@ -62,12 +62,18 @@ alias	OOo=openoffice
 alias	assh=autossh
 	http() { telnet $1 80 }
 alias	root='ssh root@localhost'
-alias	wget='noglob wget'
 
 # Five character aliases
-alias	clive='noglob clive'
 alias	deurl='$HOME/bin/url_decode.pl'
 	perlv()	{ perl -le "use $1; print "'$'"$1"'::VERSION;' }
+
+# noglob aliasses
+alias	mmv='noglob mmv'
+alias	wget='noglob wget'
+alias	find='noglob find'
+alias	clive='noglob clive'
+alias	clivescan='noglob clivescan'
+alias	translate='noglob translate'
 
 # Compose key errors
 alias	ßh=ssh
