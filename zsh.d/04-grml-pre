@@ -11,3 +11,5 @@ if [ "domainname not found" != "`which domainname`" ]; then
 else
     BATTERY=1
 fi
+
+export EDITOR="emacsclient -a emacs"
