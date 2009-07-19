@@ -4,7 +4,7 @@ export DEBFULLNAME="Axel Beckert"
 export DEBUILD_LINTIAN=yes
 
 case `hostname -f` in
-    metisse.ethz.ch|tux-nslu2.ethz.ch|kiva6.ethz.ch|*.deuxchevaux.org)
+    metisse.ethz.ch|tux-nslu2.ethz.ch|kiva*.ethz.ch|*.deuxchevaux.org)
 	export DEBEMAIL="abe@deuxchevaux.org"
 	export DEBUILD_DPKG_BUILDPACKAGE_OPTS="-k95930EDE"
 	;;
