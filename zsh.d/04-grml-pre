@@ -13,3 +13,5 @@ else
 fi
 
 export EDITOR="emacsclient -a emacs"
+export BROWSER="conkeror"
+export ABROWSER="lynx"
