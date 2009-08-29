@@ -67,7 +67,7 @@ function asc() {
 
 # Four character aliases
 alias	assh=autossh
-	http() { telnet $1 80 }
+fucntion http() { telnet $1 80 }
 alias	root='ssh root@localhost'
 
 # Five character aliases
