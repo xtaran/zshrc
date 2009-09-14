@@ -1,6 +1,6 @@
 # -*- sh -*-
 
-if [ "$HOST" = wiggis -p "$HOST" = phd-imap ]; then
+if [ "$HOST" = wiggis -o "$HOST" = phd-imap ]; then
     hash -d imap=/var/imap/a/abe
 fi
 
