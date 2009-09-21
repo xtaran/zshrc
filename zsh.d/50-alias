@@ -100,6 +100,22 @@ alias	grep='grep --color=auto'
 alias	fgrep='fgrep --color=auto'
 alias	egrep='egrep --color=auto'
 
+# OpenSSL
+for i in sha512 sha256 sha1 md5; do
+	ssl-cert-$i() { openssl x509 -noout -fingerprint -$i -in $1 }
+done
+
+ssl-cert-fingerprints() {
+	for i in sha512 sha256 sha1 md5; do
+	        ssl-cert-$i $1
+        done
+}
+
+ssl-cert-info() {
+        openssl x509 -noout -text -in $1
+        ssl-cert-fingerprints $1
+}
+
 ### Set ###
 alias   setvi='export EDITOR=vi VISUAL=vi'
 alias   setvim='export EDITOR=vim VISUAL=vim'
