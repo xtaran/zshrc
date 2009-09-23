@@ -3,7 +3,7 @@
 GRML_WARN_SKEL=0
 
 if [ "domainname not found" != "`which domainname`" ]; then
-    if [ `domainname` = "phys.ethz.ch" ]; then
+    if [ "`domainname`" = "phys.ethz.ch" ]; then
 	BATTERY=0
     else
 	BATTERY=1
