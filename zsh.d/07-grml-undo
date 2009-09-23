@@ -1,2 +1,4 @@
 # -*- sh -*-
-unalias lsw
+if alias lsw 2>&1 > /dev/null; then
+    unalias lsw
+fi
