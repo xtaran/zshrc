@@ -62,7 +62,7 @@ function asc() {
     # Set the title to something more obvious, e.g. the expanded
     # alias, eh, function
     print -Pn "\e]0;%n@%m: autossh -t $* 'screen -RDU'\a";
-    autossh -t "$@" 'screen -RDU'
+    autossh -x -t "$@" 'screen -RDU'
 }
 
 # Four character aliases
