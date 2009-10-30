@@ -4,13 +4,15 @@ if [ "$HOST" = wiggis -o "$HOST" = phd-imap ]; then
     hash -d imap=/var/imap/a/abe
 fi
 
-if [ `hostname -d` = ethz.ch ]; then
-    hash -d local=/pub/debian-local
-    hash -d configs=/pub/debian-local/configs
-    hash -d lenny=/pub/debian-local/configs/lenny
-    hash -d SERVER=/pub/debian-local/configs/lenny/SERVER
-    hash -d SITE=/pub/debian-local/configs/lenny/SITE
-    hash -d etch=/pub/debian-local/configs/etch
+if which domainname > /dev/null; then
+    if [ "`domainname`" = "phys.ethz.ch" ]; then
+	hash -d local=/pub/debian-local
+	hash -d configs=/pub/debian-local/configs
+	hash -d lenny=/pub/debian-local/configs/lenny
+	hash -d SERVER=/pub/debian-local/configs/lenny/SERVER
+	hash -d SITE=/pub/debian-local/configs/lenny/SITE
+	hash -d etch=/pub/debian-local/configs/etch
+    fi
 fi
 
 
