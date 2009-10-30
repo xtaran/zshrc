@@ -61,8 +61,8 @@ alias	OOo=openoffice
 function asc() {
     # Set the title to something more obvious, e.g. the expanded
     # alias, eh, function
-    print -Pn "\e]0;%n@%m: autossh -t $* 'screen -RDU'\a";
-    autossh -x -t "$@" 'screen -RDU'
+    print -Pn "\e]0;%n@%m: autossh -t $* 'screen -RdU'\a";
+    autossh -x -t "$@" 'screen -RdU'
 }
 
 # Four character aliases
