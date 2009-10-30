@@ -2,14 +2,14 @@
 # Do not warn about old skel dot-files anymore
 GRML_WARN_SKEL=0
 
-if [ "domainname not found" != "`which domainname`" ]; then
-    if [ "`domainname`" = "phys.ethz.ch" ]; then
+if which acpi > /dev/null; then
+    if [ "`acpi`" = "" ]; then
 	BATTERY=0
     else
 	BATTERY=1
     fi
 else
-    BATTERY=1
+    BATTERY=0
 fi
 
 export EDITOR="emacsclient -a emacs"
