@@ -1,7 +1,9 @@
 # -*- sh -*-
 export PATH=${PATH}:/sbin:/usr/sbin:/usr/local/bin/sbin:/usr/games:${HOME}/bin
 
-if [ "`domainname`" = "phys.ethz.ch" ]; then
-    export PATH=${PATH}:/home/isg/bin
+if which domainname > /dev/null; then
+    if [ "`domainname`" = "phys.ethz.ch" ]; then
+	export PATH=${PATH}:/home/isg/bin
+    fi
 fi
 
