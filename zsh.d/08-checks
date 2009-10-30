@@ -1,0 +1,7 @@
+# -*- sh -*-
+
+if which domainname > /dev/null; then
+    NISDOMAINNAME=`domainname`
+fi
+
+DOMAINNAME=`hostname -d`
