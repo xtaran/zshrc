@@ -1,2 +1,7 @@
 # -*- sh -*-
-export PATH=${PATH}:/home/isg/bin:/sbin:/usr/sbin:/usr/local/bin/sbin:${HOME}/bin
+export PATH=${PATH}:/sbin:/usr/sbin:/usr/local/bin/sbin:/usr/games:${HOME}/bin
+
+if [ "`domainname`" = "phys.ethz.ch" ]; then
+    export PATH=${PATH}:/home/isg/bin
+fi
+
