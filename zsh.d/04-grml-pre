@@ -3,7 +3,7 @@
 GRML_WARN_SKEL=0
 
 if which acpi > /dev/null; then
-    if [ "`acpi`" = "" ]; then
+    if [ "`acpi`" = "" -o "$HOSTNAME" = loadrunner ]; then
 	BATTERY=0
     else
 	BATTERY=1
