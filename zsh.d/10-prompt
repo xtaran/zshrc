@@ -11,7 +11,16 @@ else
     BLOCKEND="%b"
 fi
 
+WHICH_LSB_RELEASE="$(which lsb_release | head -1)"
+PROMPT_DISTRIBUTION_PREFIX=""
+if [ -n "$WHICH_LSB_RELEASE" -a -x "$WHICH_LSB_RELEASE" ]; then
+    DISTRIBUTION="$(${WHICH_LSB_RELEASE} -si)"
+    if [ "$DISTRIBUTION" = "Ubuntu" ]; then
+        PROMPT_DISTRIBUTION_PREFIX="%{[33m%}U%{[m%} ";
+    fi
+fi
+
 # $ZSH_VERSION
-PROMPT="%S!%h Z%i %(?..%{[31m%})?%?%(?..%{[m%}%S) L%L%s ${debian_chroot:+($debian_chroot)}${USERBEGIN}%n@%m${USEREND}%B:%y%b (%U%N%u) %B%* [%5~] %b%<<"'${VCS_INFO_message_0_}'"%B%(!.#.>)%b "
+PROMPT="${PROMPT_DISTRIBUTION_PREFIX}%S!%h Z%i %(?..%{[31m%})?%?%(?..%{[m%}%S) L%L%s ${debian_chroot:+($debian_chroot)}${USERBEGIN}%n@%m${USEREND}%B:%y%b (%U%N%u) %B%* [%5~] %b%<<"'${VCS_INFO_message_0_}'"%B%(!.#.>)%b "
 
 #PROMPT="${RED}${EXITCODE}${WHITE}${debian_chroot:+($debian_chroot)}${BLUE}%n${NO_COLOUR}@%m %40<...<%B%~%b%<< "'${VCS_INFO_message_0_}'"%# "
