@@ -45,6 +45,12 @@ alias	ls='ls -F --color=auto'
 alias	la='ls -AF'
 alias	ll='ls -AlF'
 
+# function to do `cd` using `xd`
+function xd() {
+    cd $(/usr/bin/xd $*)
+}
+
+
 # Three character aliases
 alias	acs='apt-cache show'
 alias	acp='apt-cache policy'
