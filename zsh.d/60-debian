@@ -5,7 +5,7 @@ export DEBUILD_LINTIAN=yes
 
 case `hostname -f` in
     metisse.ethz.ch|tux-nslu2.ethz.ch|kiva*.ethz.ch|*.deuxchevaux.org)
-	export DEBEMAIL="abe@deuxchevaux.org"
+	export DEBEMAIL="abe@debian.org"
 	export DEBUILD_DPKG_BUILDPACKAGE_OPTS="-k95930EDE"
 	;;
     *.ethz.ch)
@@ -13,7 +13,7 @@ case `hostname -f` in
 	export DEBUILD_DPKG_BUILDPACKAGE_OPTS="-k4A2E162B"
 	;;
     *)
-	export DEBEMAIL="abe@deuxchevaux.org"
+	export DEBEMAIL="abe@debian.org"
 	export DEBUILD_DPKG_BUILDPACKAGE_OPTS="-k95930EDE"
 	;;
 esac
