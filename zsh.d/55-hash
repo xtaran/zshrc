@@ -12,3 +12,7 @@ if [ "$NISDOMAINNAME" = "phys.ethz.ch" ]; then
     hash -d SITE=/pub/debian-local/configs/lenny/SITE
     hash -d etch=/pub/debian-local/configs/etch
 fi
+
+if [ -d /usr/share/doc/debian-policy ]; then
+    hash -d policy=/usr/share/doc/debian-policy
+fi
