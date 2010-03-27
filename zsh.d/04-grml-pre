@@ -19,7 +19,7 @@ EDITORS=(
     nano pico             # pico and clones
     joe jupp              # joe and clones
     elvis                 # less preferred vi clones
-    editor                # Generic editors
+    editor edit           # Generic editors
 )
 
 for ed in $EDITORS; do
