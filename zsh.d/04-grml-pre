@@ -13,9 +13,29 @@ else
 fi
 
 export EDITOR="emacsclient -a emacs"
-export ABROWSER="lynx"
+
+TEXTBROWSERS=(lynx links2 links elinks w3m)
+XBROWSERS=(conkeror arora midori iceweasel firefox abrowser iceape seamonkey xlinks2 chromium-browser vimprobable google-chrome)
+
+# Check which browsers are installed and use the most preferred one
+for tb in $TEXTBROWSERS; do
+    if which "$tb" > /dev/null; then
+	export ABROWSER="$tb"
+	break
+    fi
+done
+
+BROWSER=""
 if [ -z "$DISPLAY" ]; then
     export BROWSER="$ABROWSER"
 else
-    export BROWSER="conkeror"
+    for xb in $XBROWSERS; do
+	if which "$xb" > /dev/null; then
+	    export BROWSER="$xb"
+	    break
+	fi
+    done
+    if [ -z "$BROWSER" ]; then
+	export BROWSER="$ABROWSER"
+    fi
 fi
