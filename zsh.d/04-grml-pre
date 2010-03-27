@@ -12,7 +12,17 @@ else
     BATTERY=0
 fi
 
-export EDITOR="emacsclient -a emacs"
+EDITORS=(zile emacs nvi elvis-tiny vim vi jemacs mg jemacs nano pico joe jupp elvis editor)
+if which emacsclient > /dev/null; then
+    export EDITOR="emacsclient -a emacs"
+else
+    for ed in $EDITORS; do
+	if which "$ed" > /dev/null; then
+	    export EDITOR="$ed"
+	    break
+	fi
+    done
+fi
 
 TEXTBROWSERS=(lynx links2 links elinks w3m)
 XBROWSERS=(conkeror arora midori iceweasel firefox abrowser iceape seamonkey xlinks2 chromium-browser vimprobable google-chrome)
