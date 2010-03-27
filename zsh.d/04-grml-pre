@@ -26,7 +26,7 @@ if which emacsclient > /dev/null; then
 fi
 
 TEXTBROWSERS=(lynx links2 links elinks w3m)
-XBROWSERS=(conkeror arora midori netsurf xlinks2 iceweasel firefox abrowser iceape seamonkey chromium-browser vimprobable google-chrome)
+XBROWSERS=(conkeror arora midori netsurf opera xlinks2 iceweasel firefox abrowser iceape seamonkey chromium-browser vimprobable chimera2 google-chrome)
 
 # Check which browsers are installed and use the most preferred one
 for tb in $TEXTBROWSERS; do
