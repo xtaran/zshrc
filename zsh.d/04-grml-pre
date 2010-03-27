@@ -12,7 +12,15 @@ else
     BATTERY=0
 fi
 
-EDITORS=(emacs zile nvi elvis-tiny vim vi jemacs mg jemacs nano pico joe jupp elvis editor)
+EDITORS=(
+    emacs zile            # emacs and good clones
+    nvi elvis-tiny vim vi # vi and clones
+    jemacs mg jemacs      # emacs and less preferred clones
+    nano pico             # pico and clones
+    joe jupp              # joe and clones
+    elvis                 # less preferred vi clones
+    editor                # Generic editors
+)
 
 for ed in $EDITORS; do
     if which "$ed" > /dev/null; then
