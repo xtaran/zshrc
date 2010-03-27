@@ -13,13 +13,13 @@ else
 fi
 
 EDITORS=(
-    emacs zile            # emacs and good clones
-    nvi elvis-tiny vim vi # vi and clones
-    jemacs mg jemacs      # emacs and less preferred clones
-    nano pico             # pico and clones
-    joe jupp              # joe and clones
-    elvis                 # less preferred vi clones
-    editor edit           # Generic editors
+    emacs zile                 # emacs and good clones
+    nvi elvis-tiny vim vi      # vi and clones
+    jove jemacs mg qemacs vile # emacs and less preferred clones
+    nano pico                  # pico and clones
+    joe jupp                   # joe and clones
+    elvis                      # less preferred vi clones
+    editor edit                # Generic editors
 )
 
 for ed in $EDITORS; do
