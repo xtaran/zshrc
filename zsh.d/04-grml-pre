@@ -13,5 +13,9 @@ else
 fi
 
 export EDITOR="emacsclient -a emacs"
-export BROWSER="conkeror"
 export ABROWSER="lynx"
+if [ -z "$DISPLAY" ]; then
+    export BROWSER="$ABROWSER"
+else
+    export BROWSER="conkeror"
+fi
