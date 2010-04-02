@@ -152,3 +152,9 @@ alias	lesss=less
 start stop restart reload force-reload() {
     sudo invoke-rc.d $1 $0
 }
+
+# From http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=299228
+apt-rbdepends () {
+    grep-dctrl -F Build-Depends "$1" -s Package /var/lib/apt/lists/*_Sources \
+	| sort -u
+}
