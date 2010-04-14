@@ -3,7 +3,10 @@
 GRML_WARN_SKEL=0
 
 if which acpi > /dev/null; then
-    if [ "`acpi`" = "" -o "$HOST" = loadrunner ]; then
+    __tmp_acpi="`acpi 2>&1`"
+    if [ "$__tmp_acpi" = "" -o  \
+	 "$__tmp_acpi" = "No support for device type: battery" \
+	 -o "$HOST" = loadrunner ]; then
 	BATTERY=0
     else
 	BATTERY=1
