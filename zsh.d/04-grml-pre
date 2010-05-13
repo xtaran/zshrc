@@ -8,6 +8,8 @@ if which acpi > /dev/null; then
 	 "$__tmp_acpi" = "No support for device type: battery" \
 	 -o "$HOST" = loadrunner ]; then
 	BATTERY=0
+    elif [ -n "$MC_SID" ]; then
+	BATTERY=0
     else
 	BATTERY=1
     fi
