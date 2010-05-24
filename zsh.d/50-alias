@@ -63,7 +63,7 @@ function asc() {
     # Set the title to something more obvious, e.g. the expanded
     # alias, eh, function
     print -Pn "\e]0;%n@%m: autossh -t $* 'screen -RdU'\a";
-    autossh -x -t "$@" 'screen -RdU'
+    autossh -x -a -t "$@" 'screen -RdU'
 }
 compdef asc=ssh
 
