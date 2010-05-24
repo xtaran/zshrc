@@ -65,6 +65,7 @@ function asc() {
     print -Pn "\e]0;%n@%m: autossh -t $* 'screen -RdU'\a";
     autossh -x -t "$@" 'screen -RdU'
 }
+compdef asc=ssh
 
 # Four character aliases
 alias	assh=autossh
