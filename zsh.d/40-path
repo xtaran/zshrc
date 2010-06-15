@@ -5,3 +5,11 @@ if [ "$NISDOMAINNAME" = "phys.ethz.ch" ]; then
     export PATH=${PATH}:/home/isg/bin
 fi
 
+if [ -d ${HOME}/sans/bin ]; then
+    export PATH=${PATH}:${HOME}/sans/bin
+fi
+
+if [ -d ${HOME}/git/sans/bin ]; then
+    export PATH=${PATH}:${HOME}/git/sans/bin
+fi
+
