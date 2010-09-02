@@ -1,4 +1,6 @@
 # -*- sh -*-
 
 # I need this so often for quick log file statistics
-alias -g SUS='sort | uniq -c | sort -n'
+function sus() {
+    sort "$@" | uniq -c | sort -n
+}
