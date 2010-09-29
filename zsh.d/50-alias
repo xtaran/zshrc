@@ -50,6 +50,11 @@ alias	ll='ls -AlF'
 alias	acs='apt-cache show'
 alias	acp='apt-cache policy'
 alias	ac/='apt-cache search'
+alias	af/='apt-file search'
+alias	afs='apt-file search'
+alias	afl='apt-file list'
+alias	afu='apt-file update'
+alias	asv='apt-show-versions'
         ffi() { find . -iname "$@" }
         #lpr() { lpr "$@"; lpq }
 alias	cd-=cd -
