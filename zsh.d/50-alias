@@ -54,6 +54,17 @@ alias	af/='apt-file search'
 alias	afs='apt-file search'
 alias	afl='apt-file list'
 alias	afu='apt-file update'
+alias	agi='aptitude install'
+alias	ag+='aptitude install'
+alias	ag-='aptitude remove'
+alias	agr='aptitude remove'
+alias	ag_='aptitude purge'
+alias	agp='aptitude purge'
+alias	agu='aptitude update'
+alias	agh='aptitude hold'
+alias	agc='apt-get clean'
+alias	agw='aptitude why'
+alias	'a-u'='aptitude -u'
 alias	asv='apt-show-versions'
         ffi() { find . -iname "$@" }
         #lpr() { lpr "$@"; lpq }
@@ -76,10 +87,18 @@ compdef asc=ssh
 alias	assh=autossh
 fucntion http() { telnet $1 80 }
 alias	root='ssh root@localhost'
+alias	agsu='aptitude safe-upgrade'
+alias	agdu='aptitude full-upgrade'
+alias	agma='aptitude markauto'
+alias	agri='aptitude reinstall'
+alias	aguh='aptitude unhold'
+alias	agbd='aptitude build-dep'
+alias	agwn='aptitude why-not'
 
 # Five character aliases
 alias	deurl='$HOME/bin/url_decode.pl'
 	perlv()	{ perl -le "use $1; print "'$'"$1"'::VERSION;' }
+walias	aguma='aptitude unmarkauto'
 
 # noglob aliasses
 alias	mmv='noglob mmv'
