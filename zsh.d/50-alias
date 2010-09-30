@@ -98,7 +98,7 @@ alias	agwn='aptitude why-not'
 # Five character aliases
 alias	deurl='$HOME/bin/url_decode.pl'
 	perlv()	{ perl -le "use $1; print "'$'"$1"'::VERSION;' }
-walias	aguma='aptitude unmarkauto'
+alias	aguma='aptitude unmarkauto'
 
 # noglob aliasses
 alias	mmv='noglob mmv'
