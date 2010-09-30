@@ -87,6 +87,7 @@ compdef asc=ssh
 alias	assh=autossh
 fucntion http() { telnet $1 80 }
 alias	root='ssh root@localhost'
+alias	acss='apt-cache showsrc'
 alias	agsu='aptitude safe-upgrade'
 alias	agdu='aptitude full-upgrade'
 alias	agma='aptitude markauto'
@@ -98,6 +99,7 @@ alias	agwn='aptitude why-not'
 # Five character aliases
 alias	deurl='$HOME/bin/url_decode.pl'
 	perlv()	{ perl -le "use $1; print "'$'"$1"'::VERSION;' }
+alias	acsrc='apt-cache showsrc'
 alias	aguma='aptitude unmarkauto'
 
 # noglob aliasses
