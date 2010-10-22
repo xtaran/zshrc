@@ -84,7 +84,14 @@ function asc() {
 compdef asc=ssh
 
 # Four character aliases
-alias	assh=autossh
+function assh() {
+    # Set the title to something more obvious, e.g. the expanded
+    # alias, eh, function
+    print -Pn "\e]0;%n@%m: autossh $*\a";
+    autossh "$@"
+}
+compdef assh=ssh
+
 fucntion http() { telnet $1 80 }
 alias	root='ssh root@localhost'
 alias	acss='apt-cache showsrc'
