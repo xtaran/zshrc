@@ -1,0 +1,7 @@
+How to install:
+
+git clone git@gitorious.org:abe/zshrc.git ~/.zsh
+cd ~/.zsh
+git submodule init
+git submodule update
+ln -vis .zsh/zshenv ~/.zshenv
