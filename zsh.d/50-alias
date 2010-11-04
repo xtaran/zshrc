@@ -61,7 +61,7 @@ if whence wcd > /dev/null; then
 	wcd.exec "$@"
 	. $HOME/bin/wcd.go
     }
-if
+fi
 
 # Three character aliases
 alias	acs='apt-cache show'
