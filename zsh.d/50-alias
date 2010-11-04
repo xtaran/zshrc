@@ -29,6 +29,11 @@ alias	o='$PAGER'
 alias	q=exit
 alias	t=touch
 
+if [ -r /usr/share/autojump/autojump.sh ]; then
+    unalias j
+    .  /usr/share/autojump/autojump.sh
+fi
+
 # Two character aliases
 alias	 eg='egrep --color=auto'
 function ff() { find . -name "$@" }
