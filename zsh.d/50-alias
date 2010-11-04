@@ -37,7 +37,9 @@ alias	 qu='quota -v'
 alias	 tn=telnet
 alias	 vf=cd
 alias	 xs=cd
-function xd() { cd $(command xd "$@") }
+if whence xd > /dev/null; then
+    function xd() { cd $(command xd "$@") }
+fi
 function df() { command df -TP "$@" | column -t }
 
 alias	mx="nslookup -sil -q=mx"
