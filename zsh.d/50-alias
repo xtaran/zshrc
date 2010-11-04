@@ -57,9 +57,9 @@ alias	ll='ls -AlF'
 # In average two and a half character aliases ;-)
 if whence wcd > /dev/null; then
     alias wd=wcd
-    function wcd {
+    function wcd() {
 	wcd.exec "$@"
-	. $HOME/bin/wcd.go
+	. "${HOME}/bin/wcd.go"
     }
 fi
 
