@@ -122,10 +122,10 @@ alias	agbd='aptitude build-dep'
 alias	agwn='aptitude why-not'
 
 # Five character aliases
-alias	deurl='$HOME/bin/url_decode.pl'
-	perlv()	{ perl -le "use $1; print "'$'"$1"'::VERSION;' }
-alias	acsrc='apt-cache showsrc'
-alias	aguma='aptitude unmarkauto'
+alias	 deurl='$HOME/bin/url_decode.pl'
+function perlv()	{ perl -le "use $1; print "'$'"$1"'::VERSION;' }
+alias	 acsrc='apt-cache showsrc'
+alias	 aguma='aptitude unmarkauto'
 function mount() {
     if [ $# -eq 0 ]; then
 	command mount | column -t
