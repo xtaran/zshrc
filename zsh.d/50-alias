@@ -86,7 +86,7 @@ alias	'a-u'='aptitude -u'
 alias	asv='apt-show-versions'
 function ffi() { find . -iname "$@" }
 function lpr() { command lpr "$@"; lpq }
-alias	cd-=cd -
+alias	cd-='cd -'
 alias	cls=clear # Yeah, that's from DOS
 alias   ino='inotail -f'
 alias	nsl=nslookup
