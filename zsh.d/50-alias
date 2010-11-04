@@ -30,15 +30,15 @@ alias	q=exit
 alias	t=touch
 
 # Two character aliases
-alias	eg='egrep --color=auto'
-        ff() { find . -name "$@" }
-alias	gr='grep --color=auto'
-alias	qu='quota -v'
-alias	tn=telnet
-alias	vf=cd
-alias	xs=cd
-        xd() { cd $(/usr/bin/xd "$@") }
-	df() { command df -TP "$@" | column -t }
+alias	 eg='egrep --color=auto'
+function ff() { find . -name "$@" }
+alias	 gr='grep --color=auto'
+alias	 qu='quota -v'
+alias	 tn=telnet
+alias	 vf=cd
+alias	 xs=cd
+function xd() { cd $(command xd "$@") }
+function df() { command df -TP "$@" | column -t }
 
 alias	mx="nslookup -sil -q=mx"
 alias	ns="nslookup -sil -q=ns"
@@ -67,8 +67,8 @@ alias	agc='apt-get clean'
 alias	agw='aptitude why'
 alias	'a-u'='aptitude -u'
 alias	asv='apt-show-versions'
-        ffi() { find . -iname "$@" }
-        #lpr() { lpr "$@"; lpq }
+function ffi() { find . -iname "$@" }
+#function lpr() { lpr "$@"; lpq }
 alias	cd-=cd -
 alias	cls=clear # Yeah, that's from DOS
 alias   ino='inotail -f'
