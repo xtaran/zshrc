@@ -30,7 +30,7 @@ alias	q=exit
 alias	t=touch
 
 if [ -r /usr/share/autojump/autojump.sh ]; then
-    unalias j
+    alias j > /dev/null && unalias j
     .  /usr/share/autojump/autojump.sh
 fi
 
