@@ -49,6 +49,15 @@ alias	ls='ls -F --color=auto'
 alias	la='ls -AF'
 alias	ll='ls -AlF'
 
+# In average two and a half character aliases ;-)
+if whence wcd > /dev/null; then
+    alias wd=wcd
+    function wcd {
+	wcd.exec "$@"
+	. $HOME/bin/wcd.go
+    }
+if
+
 # Three character aliases
 alias	acs='apt-cache show'
 alias	acp='apt-cache policy'
