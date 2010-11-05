@@ -1,0 +1,36 @@
+# -*- sh -*-
+
+#-() { cd - }
+-() { popd "$@" }
++() { pushd "$@" }
+-1 -2 -3 -4 -5 -6 -7 -8 -9 +0 +1 +2 +3 +4 +5 +6 +7 +8 +9() { pushd $0 }
+
+# Don't type too much
+alias	cd-='cd -'
+alias	cd..='cd ..'
+alias   ...='cd ../..'
+alias   ....='cd ../../..'
+
+# Common typos
+alias	 vf=cd
+alias	 xs=cd
+
+# autojump support
+if [ -r /usr/share/autojump/autojump.sh ]; then
+    alias j > /dev/null && unalias j
+    .  /usr/share/autojump/autojump.sh
+fi
+
+# xd support
+if whence xd > /dev/null; then
+    function xd() { cd $(command xd "$@") }
+fi
+
+# wcd support
+if whence wcd > /dev/null; then
+    alias wd=wcd
+    function wcd() {
+	wcd.exec "$@"
+	. "${HOME}/bin/wcd.go"
+    }
+fi
