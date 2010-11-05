@@ -34,6 +34,9 @@ alias	ls='ls -F --color=auto'
 alias	la='ls -AF'
 alias	ll='ls -AlF'
 
+alias	uc='perl -Mlocale -pe "\$_=uc(\$_);"'
+alias	lc='perl -Mlocale -pe "\$_=lc(\$_);"'
+
 # Three character aliases
 alias	acs='apt-cache show'
 alias	acp='apt-cache policy'
