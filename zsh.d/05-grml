@@ -6,6 +6,8 @@ source ${HOME}/.zsh/grml-etc-core/etc/zsh/zshrc
 rationalise-dot() {
     if [[ $LBUFFER == *.. ]] ; then
 	LBUFFER+=/..
+    elif [[ $LBUFFER == cd ]] ; then
+	LBUFFER+=" .."
     else
 	LBUFFER+=.
     fi
