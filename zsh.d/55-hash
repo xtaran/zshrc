@@ -8,15 +8,13 @@ if [ "$NISDOMAINNAME" = "phys.ethz.ch" ]; then
     hash -d local=/pub/debian-local
     hash -d configs=/pub/debian-local/configs
     # Default currently: Lenny
-    hash -d SERVER=/pub/debian-local/configs/lenny/SERVER
-    hash -d SITE=/pub/debian-local/configs/lenny/SITE
+    for d in SITE SERVER SERVER-SKEL; do
+	hash -d $d=/pub/debian-local/configs/lenny/$d
+    done
     # All our current and probably future distributions
-    hash -d etch=/pub/debian-local/configs/etch
-    hash -d lenny=/pub/debian-local/configs/lenny
-    hash -d squeeze=/pub/debian-local/configs/squeeze
-    hash -d karmic=/pub/debian-local/configs/karmic
-    hash -d lucid=/pub/debian-local/configs/lucid
-    hash -d maverick=/pub/debian-local/configs/maverick
+    for d in etch lenny squeeze karmic lucid maverick; do
+	hash -d $d=/pub/debian-local/configs/$d
+    done
 fi
 
 if [ -d /usr/share/doc/debian-policy ]; then
