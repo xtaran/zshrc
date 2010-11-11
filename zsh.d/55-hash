@@ -24,3 +24,8 @@ fi
 if [ -d /usr/share/doc/developers-reference ]; then
     hash -d reference=/usr/share/doc/developers-reference
 fi
+
+# From corekeeper
+if [ -d /var/log/core ]; then
+    hash -d core=/var/log/core
+fi
