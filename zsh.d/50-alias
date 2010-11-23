@@ -70,7 +70,12 @@ function asc() {
     # Set the title to something more obvious, e.g. the expanded
     # alias, eh, function
     print -Pn "\e]0;%n@%m: autossh -t $* 'screen -RdU'\a";
-    autossh -x -a -t "$@" 'screen -RdU'
+
+    # For the following hack for getting ssh-agent to work inside the
+    # reattached screen session, see
+    # http://samrowe.com/wordpress/ssh-agent-and-gnu-screen/ and
+    # http://www.stderr.nl/Blog/Software/Mutt/MuttRemoteAttachments.html?seemore=y
+    autossh -x -A -t "$@" '~/.mutt/bin/setup-ssh-screen || screen -RdU'
 }
 compdef asc=ssh
 
