@@ -12,4 +12,6 @@ if [ "$DISPLAY" != "" ]; then
 
     alias	irc="$HOME/bin/ircstart.sh"
     alias	fehxv='feh -ZFdxpr'
+
+    alias	isoxterm='xterm +lc +u8'
 fi
