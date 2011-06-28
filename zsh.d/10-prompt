@@ -14,6 +14,6 @@ fi
 DISTRIBUTION_CODENAME=`lsb_release -cs`
 
 # $ZSH_VERSION
-PROMPT="%S!%h Z%i %(?..%{[31m%})?%?%(?..%{[m%}%S) L%L%s ${debian_chroot:+($debian_chroot)}${USERBEGIN}%n@%m${USEREND}%B:%~%b (%y %U%N%u ${DISTRIBUTION_CODENAME}) %B%* %b%<<"'${VCS_INFO_message_0_}${vcs_info_msg_0_}'$'\n'"%B%23<…<%~%<< %(!.#.→)%b "
+PROMPT="%S!%h Z%i %(?..%{[31m%})?%?%(?..%{[m%}%S) L%L%s ${debian_chroot:+($debian_chroot)}${USERBEGIN}%n@%m${USEREND}%B:%~%b (%y %U%N ${ZSH_VERSION}%u ${DISTRIBUTION_CODENAME}) %B%* %b%<<"'${VCS_INFO_message_0_}${vcs_info_msg_0_}'$'\n'"%B%23<…<%~%<< %(!.#.→)%b "
 
 #PROMPT="${RED}${EXITCODE}${WHITE}${debian_chroot:+($debian_chroot)}${BLUE}%n${NO_COLOUR}@%m %40<...<%B%~%b%<< "'${VCS_INFO_message_0_}'"%# "
