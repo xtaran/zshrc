@@ -1,0 +1,15 @@
+# -*- zsh -*-
+
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+
+cd () {
+        if [[ -f ${1} ]]
+        then
+                [[ ! -e ${1:h} ]] && return 1
+                print "Correcting ${1} to ${1:h}"
+                builtin cd ${1:h}
+        else
+                builtin cd ${1}
+        fi
+}
