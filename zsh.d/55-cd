@@ -36,3 +36,14 @@ if whence wcd > /dev/null; then
 	. "${HOME}/bin/wcd.go"
     }
 fi
+
+# Save and restore directory, based on
+# http://chris-lamb.co.uk/2011/07/30/optimising-directory-navigation-multiple-terminals/
+
+rcd() {
+    cd "$(cat ~/.zsh/saved_dir)"
+}
+
+scd() {
+    echo "$(pwd)" > ~/.zsh/saved_dir
+}
