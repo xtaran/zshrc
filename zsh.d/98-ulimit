@@ -1,0 +1,4 @@
+# -*- sh -*-
+
+# No core dumps for now
+ulimit -c 0
