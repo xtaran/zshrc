@@ -14,4 +14,8 @@ if [ "$DISPLAY" != "" ]; then
     alias	fehxv='feh -ZFdxpr'
 
     alias	isoxterm='xterm +lc +u8'
+
+    function xlock() {
+	xscreensaver-command -lock || xtrlock || command xlock
+    }
 fi
