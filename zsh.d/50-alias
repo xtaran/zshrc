@@ -98,6 +98,7 @@ alias	agri='aptitude reinstall'
 alias	aguh='aptitude unhold'
 alias	agbd='aptitude build-dep'
 alias	agwn='aptitude why-not'
+alias	ccal='ccal -e'
 
 # Five character aliases
 alias	 deurl='$HOME/bin/url_decode.pl'
