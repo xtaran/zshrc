@@ -91,7 +91,7 @@ function assh() {
 }
 compdef assh=ssh
 
-fucntion http() { telnet $1 80 }
+unalias http
 alias	root='ssh root@localhost'
 alias	acss='apt-cache showsrc'
 alias	agsu='aptitude safe-upgrade'
