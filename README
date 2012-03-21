@@ -15,7 +15,7 @@ repository for strings like abe, deuxchevaux, Axel and Beckert before
 using it in production. ;-)
 
 At least I was quite surprised that I did backport puppet to Squeeze
-wiithout knowing it:
+without knowing it:
 
 http://snapshot.debian.org/archive/debian-backports/20111101T153804Z/pool/main/p/puppet/puppet_2.7.6-1%7Ebpo60%2B1.dsc
 
