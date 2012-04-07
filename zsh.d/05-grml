@@ -2,19 +2,6 @@
 
 source ${HOME}/.zsh/grml-etc-core/etc/zsh/zshrc
 
-# just type 'cd ...' to get 'cd ../..'
-rationalise-dot() {
-    if [[ $LBUFFER == *.. ]] ; then
-	LBUFFER+=/..
-    elif [[ $LBUFFER == cd ]] ; then
-	LBUFFER+=" .."
-    else
-	LBUFFER+=.
-    fi
-}
-zle -N rationalise-dot
-bindkey . rationalise-dot
-
 bindkey '\eq' push-line-or-edit
 
 zstyle ':completion:*:*:cd:*:directory-stack' menu yes select

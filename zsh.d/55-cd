@@ -8,10 +8,13 @@
 # Don't type too much
 alias	cd-='cd -'
 
-# Superseded by rationalise-dot()
-#alias	cd..='cd ..'
-#alias   ...='cd ../..'
-#alias   ....='cd ../../..'
+alias	 cd..='cd ..'
+alias	 ..='cd ..'
+alias    ...='cd ../..'
+alias    ....='cd ../../..'
+alias -g ..='..'
+alias -g ...='../..'
+alias -g ....='../../..'
 
 # Common typos
 alias	 vf=cd
