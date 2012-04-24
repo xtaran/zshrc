@@ -12,7 +12,7 @@ if [ "$NISDOMAINNAME" = "phys.ethz.ch" ]; then
 	hash -d $d=/pub/debian-local/configs/lenny/$d
     done
     # All our current and probably future distributions
-    for d in etch lenny squeeze wheezy karmic lucid maverick natty oneiric; do
+    for d in etch lenny squeeze wheezy karmic lucid maverick natty oneiric precise quantal; do
 	hash -d $d=/pub/debian-local/configs/$d
     done
 fi
