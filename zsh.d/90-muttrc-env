@@ -2,6 +2,6 @@
 
 MUTT_CONFIG=${HOME}/.mutt/config.zsh
 
-if [ -r ${MUTT_CONFIG} ]; then
+if [[ -r ${MUTT_CONFIG} ]]; then
     source ${MUTT_CONFIG}
 fi

@@ -27,7 +27,7 @@ alias -s ogg=ogg123
 alias -s flac=ogg123
 
 # Images. xv doesn't work well with ratpoison, so we use feh on my EeePC
-if [ `hostname -s` = nemo ]; then
+if [[ `hostname -s` = nemo ]]; then
     alias -s gif=feh png=feh jpg=feh jpeg=feh
 else
     alias -s gif=xv png=xv jpg=xv jpeg=xv
