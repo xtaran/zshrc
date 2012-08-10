@@ -22,6 +22,11 @@ case $TERM in
             _SHELL_ACCESS=screen
 	fi
 	;;
+    *)
+	if [[ -n "$SPLITVT" ]]; then
+	    _SHELL_ACCESS=splitvt
+	fi
+	;;
 esac
 
 if [[ -z "$_SHELL_ACCESS" ]]; then
