@@ -14,7 +14,9 @@ fi
 DISTRIBUTION_CODENAME=`lsb_release -cs`
 case $TERM in
     *screen*)
-	if [[ -n "$TMUX" ]]; then
+	if [[ -n "$BYOBU_RUN_DIR" ]]; then
+            _SHELL_ACCESS=byobu
+	elif [[ -n "$TMUX" ]]; then
             _SHELL_ACCESS=tmux
 	else
             _SHELL_ACCESS=screen
