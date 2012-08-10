@@ -3,7 +3,7 @@
 # abe's .Xalias #
 #################
 
-if [ "$DISPLAY" != "" ]; then
+if [[ "$DISPLAY" != "" ]]; then
     alias	xl=xlock
                 xv() { /usr/bin/xv "$@" & }
 

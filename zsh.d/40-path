@@ -1,15 +1,15 @@
 # -*- sh -*-
 export PATH=${PATH}:/sbin:/usr/sbin:/usr/local/bin/sbin:/usr/games:${HOME}/bin
 
-if [ "$NISDOMAINNAME" = "phys.ethz.ch" ]; then
+if [[ "$NISDOMAINNAME" = "phys.ethz.ch" ]]; then
     export PATH=${PATH}:/home/isg/bin
 fi
 
-if [ -d ${HOME}/sans/bin ]; then
+if [[ -d ${HOME}/sans/bin ]]; then
     export PATH=${PATH}:${HOME}/sans/bin
 fi
 
-if [ -d ${HOME}/git/sans/bin ]; then
+if [[ -d ${HOME}/git/sans/bin ]]; then
     export PATH=${PATH}:${HOME}/git/sans/bin
 fi
 

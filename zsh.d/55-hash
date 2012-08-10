@@ -1,10 +1,10 @@
 # -*- sh -*-
 
-if [ -d /var/imap/a/abe ]; then
+if [[ -d /var/imap/a/abe ]]; then
     hash -d imap=/var/imap/a/abe
 fi
 
-if [ "$NISDOMAINNAME" = "phys.ethz.ch" ]; then
+if [[ "$NISDOMAINNAME" = "phys.ethz.ch" ]]; then
     hash -d local=/pub/debian-local
     hash -d configs=/pub/debian-local/configs
     # Default currently: Lenny
@@ -17,15 +17,15 @@ if [ "$NISDOMAINNAME" = "phys.ethz.ch" ]; then
     done
 fi
 
-if [ -d /usr/share/doc/debian-policy ]; then
+if [[ -d /usr/share/doc/debian-policy ]]; then
     hash -d policy=/usr/share/doc/debian-policy
 fi
 
-if [ -d /usr/share/doc/developers-reference ]; then
+if [[ -d /usr/share/doc/developers-reference ]]; then
     hash -d reference=/usr/share/doc/developers-reference
 fi
 
 # From corekeeper
-if [ -d /var/log/core ]; then
+if [[ -d /var/log/core ]]; then
     hash -d core=/var/log/core
 fi
