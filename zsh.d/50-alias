@@ -91,7 +91,6 @@ function assh() {
 }
 compdef assh=ssh
 
-unalias http
 alias	root='ssh root@localhost'
 alias	acss='apt-cache showsrc'
 alias	agsu='aptitude safe-upgrade'
