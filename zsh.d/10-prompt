@@ -12,8 +12,28 @@ else
 fi
 
 DISTRIBUTION_CODENAME=`lsb_release -cs`
+case $TERM in
+    *screen*)
+	if [[ -n "$TMUX" ]]; then
+            _SHELL_ACCESS=tmux
+	else
+            _SHELL_ACCESS=screen
+	fi
+	;;
+esac
+
+if [[ -z "$_SHELL_ACCESS" ]]; then
+    if [[ -n "$SSH_CLIENT" ]]; then
+	_IS_MOSH=`ps uxw | awk '$2=='$PPID' && $11~/mosh/ {print}'`
+	if [[ -n "$_IS_MOSH" ]]; then
+            _SHELL_ACCESS=mosh
+	else
+            _SHELL_ACCESS=ssh
+	fi
+    fi
+fi
 
 # $ZSH_VERSION
-PROMPT="%S!%h Z%i %(?..%{[31m%})?%?%(?..%{[m%}%S) L%L%s ${SSH_CLIENT:+"%{[36m%}ssh "}%{[m%}${debian_chroot:+($debian_chroot)}${USERBEGIN}%n@%m${USEREND}%B:%~%b (%y %U%N ${ZSH_VERSION}%u ${DISTRIBUTION_CODENAME}) %B%* %b%<<"'${VCS_INFO_message_0_}${vcs_info_msg_0_}'$'\n'"%B%23<[…]<%~%<< %(!.#.→)%b "
+PROMPT="%S!%h Z%i %(?..%{[31m%})?%?%(?..%{[m%}%S) L%L%s ${_SHELL_ACCESS:+"%{[36m%}$_SHELL_ACCESS "}%{[m%}${debian_chroot:+($debian_chroot)}${USERBEGIN}%n@%m${USEREND}%B:%~%b (%y %U%N ${ZSH_VERSION}%u ${DISTRIBUTION_CODENAME}) %B%* %b%<<"'${VCS_INFO_message_0_}${vcs_info_msg_0_}'$'\n'"%B%23<[…]<%~%<< %(!.#.→)%b "
 
 #PROMPT="${RED}${EXITCODE}${WHITE}${debian_chroot:+($debian_chroot)}${BLUE}%n${NO_COLOUR}@%m %40<...<%B%~%b%<< "'${VCS_INFO_message_0_}'"%# "
