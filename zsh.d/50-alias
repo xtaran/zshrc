@@ -61,6 +61,7 @@ alias	agc='apt-get clean'
 alias	agw='aptitude why'
 alias	'a-u'='aptitude -u'
 alias	asv='apt-show-versions'
+alias   ack=ack-grep
 function ffi() { find . -iname "$@" }
 function lpr() { command lpr "$@"; lpq }
 alias	cls=clear # Yeah, that's from DOS
@@ -103,6 +104,8 @@ alias	agwn='aptitude why-not'
 alias	ccal='ccal -e'
 
 # Five character aliases
+alias    agrep=ack-grep
+alias    cgrep='ack-grep --passthru'
 alias	 deurl='$HOME/bin/url_decode.pl'
 function perlv()	{ perl -le "use $1; print "'$'"$1"'::VERSION;' }
 alias	 acsrc='apt-cache showsrc'
