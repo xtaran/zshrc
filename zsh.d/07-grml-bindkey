@@ -3,6 +3,19 @@
 bindkey ' ' self-insert
 
 # History filtering on cursor-up with prefix on the commandline
+autoload -Uz history-search-end
+
+if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+    function zle-line-init () {
+        printf '%s' ${terminfo[smkx]}
+    }
+    function zle-line-finish () {
+        printf '%s' ${terminfo[rmkx]}
+    }
+    zle -N zle-line-init
+    zle -N zle-line-finish
+fi
+
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "${terminfo[kcuu1]}" history-beginning-search-backward-end
