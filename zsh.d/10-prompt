@@ -1,4 +1,6 @@
 # -*- sh -*-
+
+# Make parts of the root prompt red
 if (( EUID != 0 )); then
     USERBEGIN="%B"
     USEREND="%b"
@@ -11,8 +13,12 @@ else
     BLOCKEND="%b"
 fi
 
+# Show distribution's codename in the prompt
 DISTRIBUTION_CODENAME=`lsb_release -cs`
+
+# Check how to current shell has been reached
 case $TERM in
+    # screen and friends
     *screen*)
 	if [[ -n "$BYOBU_RUN_DIR" ]]; then
             _SHELL_ACCESS=byobu
@@ -22,6 +28,7 @@ case $TERM in
             _SHELL_ACCESS=screen
 	fi
 	;;
+    # Other means to start a shell
     *)
 	if [[ -n "$SPLITVT" ]]; then
 	    _SHELL_ACCESS=splitvt
@@ -31,6 +38,7 @@ case $TERM in
 	;;
 esac
 
+# Determine if an SSH session is a real SSH session or a Mosh session
 if [[ -z "$_SHELL_ACCESS" ]]; then
     if [[ -n "$SSH_CLIENT" ]]; then
 	_IS_MOSH=`ps uxw | awk '$2=='$PPID' && $11~/mosh/ {print}'`
