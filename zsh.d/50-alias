@@ -173,6 +173,7 @@ alias   vt100='export TERM=vt100'
 alias aptitude-just-recommended='aptitude -o "Aptitude::Pkg-Display-Limit=!?reverse-depends(~i) ~M !?essential"'
 alias aptitude-also-via-dependency='aptitude -o "Aptitude::Pkg-Display-Limit=~i !~M ?reverse-depends(~i) !?essential"'
 alias aptitude-review-unmarkauto-libraries='aptitude -o "Aptitude::Pkg-Display-Limit=( ^lib !-dev$ !-dbg$ !-utils$ !-tools$ !-bin$ !-doc$ !^libreoffice | -data$ | -common$ | -base$ !^r-base ) !~M"'
+alias aptitude-upgradable-to-experimental='aptitude -o "Aptitude::Pkg-Display-Limit=~i ?narrow(!~VCURRENT, ~Aexperimental)"'
 
 ### BTS ###
 alias btsmutt='bts --mbox show'
