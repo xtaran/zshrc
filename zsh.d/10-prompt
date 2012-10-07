@@ -25,6 +25,8 @@ case $TERM in
     *)
 	if [[ -n "$SPLITVT" ]]; then
 	    _SHELL_ACCESS=splitvt
+	elif [[ -n "$SUDO_USER" ]]; then
+	    _SHELL_ACCESS="sudo%{[m%}:%{[36m%}$SUDO_USER"
 	fi
 	;;
 esac
