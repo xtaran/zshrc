@@ -79,7 +79,7 @@ function asc() {
     # reattached screen session, see
     # http://samrowe.com/wordpress/ssh-agent-and-gnu-screen/ and
     # http://www.stderr.nl/Blog/Software/Mutt/MuttRemoteAttachments.html?seemore=y
-    autossh -x -A -t "$@" '~/.mutt/bin/setup-ssh-screen || screen -RdU'
+    autossh -x -A -t "$@" 'test -x ~/.mutt/bin/setup-ssh-screen && exec ~/.mutt/bin/setup-ssh-screen || exec screen -RdU'
 }
 compdef asc=ssh
 
