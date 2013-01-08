@@ -170,8 +170,8 @@ alias   setemacs='export EDITOR="emacsclient -a emacs" VISUAL="emacsclient -a em
 alias   vt100='export TERM=vt100'
 
 ### Package Management ###
-alias aptitude-just-recommended='aptitude -o "Aptitude::Pkg-Display-Limit=!?reverse-depends(~i) ~M !?essential"'
-alias aptitude-also-via-dependency='aptitude -o "Aptitude::Pkg-Display-Limit=~i !~M ?reverse-depends(~i) !?essential"'
+alias aptitude-just-recommended='aptitude -o "Aptitude::Pkg-Display-Limit=!?reverse-depends(~i) ( ?reverse-recommends(~i) | ?reverse-suggests(~i) ) !?reverse-recommends(^abe-) !?reverse-suggests(^abe-) ~M !?essential"'
+alias aptitude-also-via-dependency='aptitude -o "Aptitude::Pkg-Display-Limit=~i !~M ( ?reverse-depends(~i) | ?reverse-recommends(~i) | ?reverse-suggests(~i) ) !?essential"'
 alias aptitude-review-unmarkauto-libraries='aptitude -o "Aptitude::Pkg-Display-Limit=( ^lib !-dev$ !-dbg$ !-utils$ !-tools$ !-bin$ !-doc$ !^libreoffice | -data$ | -common$ | -base$ !^r-base ) !~M"'
 alias aptitude-upgradable-to-experimental='aptitude -o "Aptitude::Pkg-Display-Limit=~i ?narrow(!~VCURRENT, ~Aexperimental)"'
 
