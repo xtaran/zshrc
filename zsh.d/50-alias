@@ -43,7 +43,10 @@ function md { mkdir -p "$@" && cd "$@" }
 # Three character aliases
 alias	acs='apt-cache show'
 alias	acp='apt-cache policy'
+alias	acd='apt-cache depends'
+alias	acr='apt-cache rdepends'
 alias	ac/='apt-cache search'
+alias	acn='apt-cache search -n'
 alias	af/='apt-file search'
 alias	afs='apt-file search'
 alias	afl='apt-file list'
