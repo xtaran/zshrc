@@ -51,17 +51,55 @@ if [[ -z "$_SHELL_ACCESS" ]]; then
 fi
 
 # Git prompt stuff
-# http://stackoverflow.com/a/2902338
-# → https://github.com/olivierverdier/zsh-git-prompt
-source ${HOME}/.zsh/git-prompt/zshrc.sh
-ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[red]%}+"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}+"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}✓"
-ZSH_THEME_GIT_PROMPT_PREFIX=""
-ZSH_THEME_GIT_PROMPT_SUFFIX=""
-ZSH_THEME_GIT_PROMPT_SEPARATOR=""
+# https://github.com/yonchu/zsh-vcs-prompt via
+# https://github.com/olivierverdier/zsh-git-prompt/issues/23#issuecomment-9913745
+
+source ${HOME}/.zsh/zsh-vcs-prompt/zshrc.sh
+
+ZSH_VCS_PROMPT_AHEAD_SIGIL='↑'
+ZSH_VCS_PROMPT_BEHIND_SIGIL='↓'
+ZSH_VCS_PROMPT_STAGED_SIGIL='+'
+ZSH_VCS_PROMPT_CONFLICTS_SIGIL='×'
+ZSH_VCS_PROMPT_UNSTAGED_SIGIL='+'
+ZSH_VCS_PROMPT_UNTRACKED_SIGIL='…'
+ZSH_VCS_PROMPT_STASHED_SIGIL='‣'
+ZSH_VCS_PROMPT_CLEAN_SIGIL='✓'
+
+## GIT
+# VCS name
+ZSH_VCS_PROMPT_GIT_FORMATS='%{%F{magenta}%}(%{%f%}#s%{%F{magenta}%})%{%f%} '
+# Begin
+ZSH_VCS_PROMPT_GIT_FORMATS+='%{%F{magenta}%}[%{%f%}'
+# Branch name
+ZSH_VCS_PROMPT_GIT_FORMATS+='%{%F{green}%}#b%{%f%}'
+# Ahead and Behind
+ZSH_VCS_PROMPT_GIT_FORMATS+='#c#d%{%F{magenta}%}|%{%f%}'
+# Staged
+ZSH_VCS_PROMPT_GIT_FORMATS+='%{%F{green}%}#e%{%f%b%}'
+# Conflicts
+ZSH_VCS_PROMPT_GIT_FORMATS+='%{%F{red}%}#f%{%f%b%}'
+# Unstaged
+ZSH_VCS_PROMPT_GIT_FORMATS+='%{%F{yellow}%}#g%{%f%b%}'
+# Untracked
+ZSH_VCS_PROMPT_GIT_FORMATS+='#h'
+# Stashed
+ZSH_VCS_PROMPT_GIT_FORMATS+='%{%F{cyan}%}#i%{%f%b%}'
+# Clean
+ZSH_VCS_PROMPT_GIT_FORMATS+='%{%F{green}%}#j%{%f%b%}'
+# End
+ZSH_VCS_PROMPT_GIT_FORMATS+='%{%F{magenta}%}]%{%f%}'
+
+## Other VCS
+# VCS name
+ZSH_VCS_PROMPT_VCS_FORMATS='%{%F{magenta}%}(%{%f%}#s%{%F{magenta}%})%{%f%} '
+# Begin
+ZSH_VCS_PROMPT_VCS_FORMATS+='%{%F{magenta}%}[%{%f%}'
+# Branch name
+ZSH_VCS_PROMPT_VCS_FORMATS+='%{%F{green}%}#b%{%f%}'
+# End
+ZSH_VCS_PROMPT_VCS_FORMATS+='%{%F{magenta}%}]%{%f%}'
 
 # $ZSH_VERSION
-PROMPT="%S!%h Z%i %(?..%{[31m%})?%?%(?..%{[m%}%S) L%L%s ${_SHELL_ACCESS:+"%{[36m%}$_SHELL_ACCESS "}%{[m%}${debian_chroot:+($debian_chroot)}${USERBEGIN}%n@%m${USEREND}%B:%~%b (%y %U%N ${ZSH_VERSION}%u ${DISTRIBUTION_CODENAME}) %B%* %b%<<"'${VCS_INFO_message_0_}${vcs_info_msg_0_}$(git_super_status)'$'\n'"%B%23<[…]<%~%<< %(!.#.→)%b "
+PROMPT="%S!%h Z%i %(?..%{[31m%})?%?%(?..%{[m%}%S) L%L%s ${_SHELL_ACCESS:+"%{[36m%}$_SHELL_ACCESS "}%{[m%}${debian_chroot:+($debian_chroot)}${USERBEGIN}%n@%m${USEREND}%B:%~%b (%y %U%N ${ZSH_VERSION}%u ${DISTRIBUTION_CODENAME}) %B%* %b%<<"'$(vcs_super_info)'$'\n'"%B%23<[…]<%~%<< %(!.#.→)%b "
 
 #PROMPT="${RED}${EXITCODE}${WHITE}${debian_chroot:+($debian_chroot)}${BLUE}%n${NO_COLOUR}@%m %40<...<%B%~%b%<< "'${VCS_INFO_message_0_}'"%# "
