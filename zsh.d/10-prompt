@@ -50,7 +50,18 @@ if [[ -z "$_SHELL_ACCESS" ]]; then
     fi
 fi
 
+# Git prompt stuff
+# http://stackoverflow.com/a/2902338
+# → https://github.com/olivierverdier/zsh-git-prompt
+source ${HOME}/.zsh/git-prompt/zshrc.sh
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[red]%}+"
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}+"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}✓"
+ZSH_THEME_GIT_PROMPT_PREFIX=""
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_SEPARATOR=""
+
 # $ZSH_VERSION
-PROMPT="%S!%h Z%i %(?..%{[31m%})?%?%(?..%{[m%}%S) L%L%s ${_SHELL_ACCESS:+"%{[36m%}$_SHELL_ACCESS "}%{[m%}${debian_chroot:+($debian_chroot)}${USERBEGIN}%n@%m${USEREND}%B:%~%b (%y %U%N ${ZSH_VERSION}%u ${DISTRIBUTION_CODENAME}) %B%* %b%<<"'${VCS_INFO_message_0_}${vcs_info_msg_0_}'$'\n'"%B%23<[…]<%~%<< %(!.#.→)%b "
+PROMPT="%S!%h Z%i %(?..%{[31m%})?%?%(?..%{[m%}%S) L%L%s ${_SHELL_ACCESS:+"%{[36m%}$_SHELL_ACCESS "}%{[m%}${debian_chroot:+($debian_chroot)}${USERBEGIN}%n@%m${USEREND}%B:%~%b (%y %U%N ${ZSH_VERSION}%u ${DISTRIBUTION_CODENAME}) %B%* %b%<<"'${VCS_INFO_message_0_}${vcs_info_msg_0_}$(git_super_status)'$'\n'"%B%23<[…]<%~%<< %(!.#.→)%b "
 
 #PROMPT="${RED}${EXITCODE}${WHITE}${debian_chroot:+($debian_chroot)}${BLUE}%n${NO_COLOUR}@%m %40<...<%B%~%b%<< "'${VCS_INFO_message_0_}'"%# "
