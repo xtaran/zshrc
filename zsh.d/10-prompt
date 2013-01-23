@@ -85,7 +85,7 @@ ZSH_VCS_PROMPT_GIT_FORMATS+='#h'
 # Clean
 ZSH_VCS_PROMPT_GIT_FORMATS+='%{%F{green}%}#j%{%f%b%}'
 # Stashed
-ZSH_VCS_PROMPT_GIT_FORMATS+='%{%F{cyan}%}#i%{%f%b%}'
+ZSH_VCS_PROMPT_GIT_FORMATS+='%{%F{yellow}%}#i%{%f%b%}'
 # End
 ZSH_VCS_PROMPT_GIT_FORMATS+='%{%F{magenta}%}]%{%f%}'
 
