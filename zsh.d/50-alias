@@ -12,7 +12,7 @@
 alias	c=cat
 #unfunction d
 alias   d='dirs -v'
-alias	g='fgrep --color=auto'
+alias	g=git
 alias   l=less
 alias	m=mutt
 alias	o='$PAGER'
@@ -22,7 +22,7 @@ alias	t=touch
 # Two character aliases
 alias	 eg='egrep --color=auto'
 function ff() { find . -name "$@" }
-alias	 gr='grep --color=auto'
+alias	 gr='fgrep --color=auto'
 alias	 qu='quota -v'
 alias	 tn=telnet
 function df() { command df -TP "$@" | column -t }
