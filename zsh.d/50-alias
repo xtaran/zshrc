@@ -43,6 +43,9 @@ alias	ec=emacsclient
 if alias md > /dev/null; then unalias md; fi
 function md { mkdir -p "$@" && cd "$@" }
 
+if alias au > /dev/null; then unalias au; fi
+alias au='aptitude -u'
+
 # Three character aliases
 alias	acs='apt-cache show'
 alias	acp='apt-cache policy'
@@ -61,11 +64,10 @@ alias	ag-='aptitude remove'
 alias	agr='aptitude remove'
 alias	ag_='aptitude purge'
 alias	agp='aptitude purge'
-alias	agu='aptitude update'
+alias	agu='apt-get update'
 alias	agh='aptitude hold'
 alias	agc='apt-get clean'
 alias	agw='aptitude why'
-alias	'a-u'='aptitude -u'
 alias	asv='apt-show-versions'
 alias   ack=ack-grep
 function ffi() { find . -iname "$@" }
@@ -105,6 +107,7 @@ alias	acss='apt-cache showsrc'
 alias	agsu='aptitude safe-upgrade'
 alias	agdu='aptitude full-upgrade'
 alias	agma='aptitude markauto'
+alias	agum='aptitude unmarkauto'
 alias	agri='aptitude reinstall'
 alias	aguh='aptitude unhold'
 alias	agbd='aptitude build-dep'
