@@ -1,0 +1,8 @@
+[grml-etc-core]
+checkout = git clone git://git.grml.org/grml-etc-core.git
+
+[zsh-syntax-highlighting]
+checkout = git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+
+[zsh-vcs-prompt]
+checkout = git clone git://github.com/yonchu/zsh-vcs-prompt.git
