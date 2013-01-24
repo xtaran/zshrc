@@ -18,6 +18,7 @@ alias	m=mutt
 alias	o='$PAGER'
 alias	q=exit
 alias	t=touch
+alias	z=zile
 
 # Two character aliases
 alias	 eg='egrep --color=auto'
@@ -36,6 +37,8 @@ alias	ll='ls -AlF'
 
 alias	uc='perl -Mlocale -pe "\$_=uc(\$_);"'
 alias	lc='perl -Mlocale -pe "\$_=lc(\$_);"'
+
+alias	ec=emacsclient
 
 if alias md > /dev/null; then unalias md; fi
 function md { mkdir -p "$@" && cd "$@" }
@@ -68,6 +71,8 @@ alias   ack=ack-grep
 function ffi() { find . -iname "$@" }
 function lpr() { command lpr "$@"; lpq }
 alias	cls=clear # Yeah, that's from DOS
+alias   ecn='emacsclient -n'
+alias   ecc='emacsclient -c'
 alias   ino='inotail -f'
 alias	nsl=nslookup
 alias	ooo=openoffice
@@ -105,6 +110,7 @@ alias	aguh='aptitude unhold'
 alias	agbd='aptitude build-dep'
 alias	agwn='aptitude why-not'
 alias	ccal='ccal -e'
+alias	eccn='emacsclient -c -n'
 
 # Five character aliases
 alias    agrep=ack-grep
