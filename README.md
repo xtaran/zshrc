@@ -3,11 +3,11 @@ Axel's zshrc
 
 How to install:
 
-git clone git@gitorious.org:abe/zshrc.git ~/.zsh
-cd ~/.zsh
-git submodule init
-git submodule update
-ln -vis .zsh/zshenv ~/.zshenv
+    git clone git://github.com/xtaran/zshrc.git ~/.zsh
+    cd ~/.zsh
+    git submodule init
+    git submodule update
+    ln -vis .zsh/zshenv ~/.zshenv
 
 BEWARE
 ======
@@ -19,9 +19,9 @@ repository for strings like abe, deuxchevaux, Axel and Beckert before
 using it in production. ;-)
 
 At least I was quite surprised that
-[I did backport puppet to Squeeze][1] without knowing it:
+[I did backport puppet to Squeeze] [puppet] without knowing it:
 
-[1] http://snapshot.debian.org/archive/debian-backports/20111101T153804Z/pool/main/p/puppet/puppet_2.7.6-1%7Ebpo60%2B1.dsc
+[puppet]: http://snapshot.debian.org/archive/debian-backports/20111101T153804Z/pool/main/p/puppet/puppet_2.7.6-1%7Ebpo60%2B1.dsc
 
 Thanks to Micah for making me aware of that issue by uploading puppet
 in my name. I'll try to fix this issue somehow, like checking if $USER
