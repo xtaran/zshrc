@@ -46,6 +46,9 @@ function md { mkdir -p "$@" && cd "$@" }
 if alias au > /dev/null; then unalias au; fi
 alias au='aptitude -u'
 
+# Needed for /usr/bin/ag
+if alias ag > /dev/null; then unalias ag; fi
+
 # Three character aliases
 alias	acs='apt-cache show'
 alias	acp='apt-cache policy'
