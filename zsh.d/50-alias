@@ -50,7 +50,8 @@ alias au='aptitude -u'
 if alias ag > /dev/null; then unalias ag; fi
 
 # Three character aliases
-alias	acs='apt-cache show'
+alias	acs='apt-cache show --no-all-versions'
+alias	acsa='apt-cache show -a'
 alias	acp='apt-cache policy'
 alias	acd='apt-cache depends'
 alias	acr='apt-cache rdepends'
