@@ -18,11 +18,13 @@ alias	m=mutt
 alias	o='$PAGER'
 alias	q=exit
 alias	t=touch
+alias	v=vcsh
 alias	z=zile
 
 # Two character aliases
 alias	 eg='egrep --color=auto'
 function ff() { find . -name "$@" }
+alias    ga='git annex'
 alias	 gr='fgrep --color=auto'
 alias	 qu='quota -v'
 alias	 tn=telnet
