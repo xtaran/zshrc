@@ -17,7 +17,7 @@ alias   l=less
 alias	m=mutt
 alias	o='$PAGER'
 alias	q=exit
-alias	t=touch
+alias	t=task
 alias	v=vcsh
 alias	z=zile
 
@@ -28,6 +28,7 @@ alias    ga='git annex'
 alias	 gr='fgrep --color=auto'
 alias	 qu='quota -v'
 alias	 tn=telnet
+alias	 to=touch
 function df() { command df -TP "$@" | column -t }
 
 alias	mx="nslookup -sil -q=mx"
