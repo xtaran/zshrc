@@ -6,3 +6,6 @@ all: $(RCZWC)
 
 %.zwc: %
 	zcompile $<
+
+clean:
+	rm -vf *.zwc
