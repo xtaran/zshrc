@@ -84,6 +84,7 @@ alias   ecn='emacsclient -n'
 alias   ecc='emacsclient -c'
 alias   ino='inotail -f'
 alias   gap='git add -p'
+alias   gnf='glark --no-filter'
 alias	mpl=mplayer
 alias	mpfs='mplayer -fs'
 alias	mpau='mplayer -vo none'
