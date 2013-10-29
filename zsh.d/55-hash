@@ -8,6 +8,7 @@ if [[ "$NISDOMAINNAME" = "phys.ethz.ch" ]]; then
     hash -d local=/pub/debian-local
     hash -d configs=/pub/debian-local/configs
     hash -d byhost=/pub/debian-local/configs/byHost
+    hash -d bygroup=/pub/debian-local/configs/byGroup
     # Default currently: Lenny
     for d in SITE SERVER SERVER-SKEL; do
 	hash -d $d=/pub/debian-local/configs/lenny/$d
