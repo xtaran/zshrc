@@ -203,6 +203,15 @@ alias aptitude-newer-than-in-archive='aptitude -o "Aptitude::Pkg-Display-Limit=~
 ### BTS ###
 alias btsmutt='bts --mbox show'
 
+### MIA stuff ###
+mia-query() {
+    if [ -x /org/qa.debian.org/mia/mia-query ]; then
+        /org/qa.debian.org/mia/mia-query "$@"
+    else
+        ssh -xa qa.debian.org /org/qa.debian.org/mia/mia-query "$@"
+    fi
+}
+
 ### Gags ###
 #alias	y='echo "Hallo, sind wir noch wach, oder sind wir wieder auf die Y-Taste gefallen? ;-)"'
 
