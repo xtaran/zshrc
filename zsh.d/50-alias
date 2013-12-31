@@ -127,6 +127,11 @@ alias	agwn='aptitude why-not'
 alias	ccal='ccal -e'
 alias	eccn='emacsclient -c -n'
 
+# apt-file search for Perl Modules, by gregoa
+function afsp() {
+    apt-file search $(echo "/$@" | sed -e 's|::|/|g ; s|-|/|g ; s|$|.pm|') | uniq
+}
+
 # Five character aliases
 alias    agrep=ack-grep
 alias    cgrep='ack-grep --passthru'
