@@ -1,2 +1,3 @@
 # -*- sh -*-
 zstyle ':vcs_info:*' disable bzr cdv mtn svk tla
+zstyle ':vcs_info:*' enable git svn hg cvs
