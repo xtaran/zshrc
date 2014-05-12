@@ -76,7 +76,6 @@ salias	agh='aptitude hold'
 salias	agc='apt-get clean'
 alias	agw='aptitude why'
 alias	asv='apt-show-versions'
-alias   ack=ack-grep
 function ffi() { find . -iname "$@" }
 function lpr() { command lpr "$@"; lpq }
 alias	cls=clear # Yeah, that's from DOS
@@ -84,13 +83,19 @@ alias   ecn='emacsclient -n'
 alias   ecc='emacsclient -c'
 alias   ino='inotail -f'
 alias   gap='git add -p'
-alias   gnf='ack-grep --passthru'
 alias	mpl=mplayer
 alias	mpfs='mplayer -fs'
 alias	mpau='mplayer -vo none'
 alias	nsl=nslookup
 alias	ooo=openoffice
 alias	OOo=openoffice
+
+if which ack > /dev/null; then
+    alias   gnf='ack --passthru'
+elif which ack-grep > /dev/null; then
+    alias   ack=ack-grep
+    alias   gnf='ack-grep --passthru'
+fi
 
 function asc() {
     # Set the title to something more obvious, e.g. the expanded
