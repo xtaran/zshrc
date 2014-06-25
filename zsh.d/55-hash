@@ -9,10 +9,8 @@ if [[ "$NISDOMAINNAME" = "phys.ethz.ch" ]]; then
     hash -d configs=/pub/debian-local/configs
     hash -d byhost=/pub/debian-local/configs/byHost
     hash -d bygroup=/pub/debian-local/configs/byGroup
-    # Default currently: Lenny
-    for d in SITE SERVER SERVER-SKEL; do
-	hash -d $d=/pub/debian-local/configs/lenny/$d
-    done
+    hash -d SERVER=/pub/debian-local/configs/byGroup/SERVER
+
     # All our current and probably future distributions
     for d in etch lenny squeeze wheezy jessie karmic lucid maverick natty oneiric precise quantal raring saucy trusty utopic; do
         if [[ -d /pub/debian-local/configs/$d ]]; then
