@@ -15,7 +15,9 @@ if [[ "$NISDOMAINNAME" = "phys.ethz.ch" ]]; then
     done
     # All our current and probably future distributions
     for d in etch lenny squeeze wheezy jessie karmic lucid maverick natty oneiric precise quantal raring saucy trusty utopic; do
-	hash -d $d=/pub/debian-local/configs/$d
+        if [[ -d /pub/debian-local/configs/$d ]]; then
+	    hash -d $d=/pub/debian-local/configs/$d
+        fi
     done
 fi
 
