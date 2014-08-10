@@ -11,3 +11,4 @@
 
 zstyle ':completion:*:*:*' hosts $ssh_config_hosts $ssh_known_hosts
 zstyle ':completion:*' special-dirs false
+zstyle ':completion:*' squeeze-slashes true
