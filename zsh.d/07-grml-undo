@@ -2,3 +2,4 @@
 if alias lsw 2>&1 > /dev/null; then
     unalias lsw
 fi
+zstyle ':completion:*' special-dirs false
