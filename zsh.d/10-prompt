@@ -50,6 +50,45 @@ if [[ -z "$_SHELL_ACCESS" ]]; then
     fi
 fi
 
+# Overwrite precmd function from grml's zshrc
+is4 && [[ $NOPRECMD -eq 0 ]] && precmd () {
+    [[ $NOPRECMD -gt 0 ]] && return 0
+    # update VCS information
+    (( ${+functions[vcs_info]} )) && vcs_info
+
+    if [[ $TERM == screen* ]] ; then
+        # Axel: Show more than just "zsh" or branch in screen's window title
+        if [[ -n ${vcs_info_msg_1_} ]] ; then
+            ESC_print "$(print -Pn '%1~'):${vcs_info_msg_1_}"
+        else
+            ESC_print "$(print -Pn '%1~')"
+        fi
+    fi
+    # just use DONTSETRPROMPT=1 to be able to overwrite RPROMPT
+    if [[ ${DONTSETRPROMPT:-} -eq 0 ]] ; then
+        if [[ $BATTERY -gt 0 ]] ; then
+            # update battery (dropped into $PERCENT) information
+            battery
+            RPROMPT="%(?..:() ${PERCENT}"
+        else
+            RPROMPT="%(?..:() "
+        fi
+    fi
+    # adjust title of xterm
+    # see http://www.faqs.org/docs/Linux-mini/Xterm-Title.html
+    [[ ${NOTITLE:-} -gt 0 ]] && return 0
+    case $TERM in
+        (xterm*|rxvt*)
+            # Axel: Don't show user and hostname if not a remote shell
+            if [ -n "$_SHELL_ACCESS" ]; then
+                set_title ${(%):-"%n@%m: %~"}
+            else
+                set_title ${(%):-"%~"}
+            fi
+            ;;
+    esac
+}
+
 # Git prompt stuff
 # https://github.com/yonchu/zsh-vcs-prompt via
 # https://github.com/olivierverdier/zsh-git-prompt/issues/23#issuecomment-9913745
