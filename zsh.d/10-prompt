@@ -83,7 +83,7 @@ is4 && [[ $NOPRECMD -eq 0 ]] && precmd () {
             if [ -n "$_SHELL_ACCESS" ]; then
                 set_title ${(%):-"%n@%m: %~"}
             else
-                set_title ${(%):-"%~"}
+                set_title ${(%):-"%2~"}
             fi
             ;;
     esac
