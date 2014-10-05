@@ -89,6 +89,36 @@ is4 && [[ $NOPRECMD -eq 0 ]] && precmd () {
     esac
 }
 
+# Overwrite preexec function from grml's zshrc
+is4 && [[ $NOPRECMD -eq 0 ]] && \
+preexec () {
+    [[ $NOPRECMD -gt 0 ]] && return 0
+# set hostname if not running on host with name 'grml'
+    if [[ -n "$HOSTNAME" ]] && [[ "$HOSTNAME" != $(hostname) ]] ; then
+       NAME="@$HOSTNAME"
+    fi
+# get the name of the program currently running and hostname of local machine
+# set screen window title if running in a screen
+    if [[ "$TERM" == screen* ]] ; then
+        # local CMD=${1[(wr)^(*=*|sudo|ssh|-*)]}       # don't use hostname
+        local CMD="${1[(wr)^(*=*|sudo|ssh|-*)]}$NAME" # use hostname
+        ESC_print ${CMD}
+    fi
+# adjust title of xterm
+    [[ ${NOTITLE} -gt 0 ]] && return 0
+    case $TERM in
+        (xterm*|rxvt*)
+            # Axel: Don't show user and hostname if not a remote shell
+            if [ -n "$_SHELL_ACCESS" ]; then
+                set_title "${(%):-"%n@%m:"}" "$1"
+            else
+                set_title ${(%):-"$1"}
+            fi
+            ;;
+    esac
+}
+
+
 # Git prompt stuff
 # https://github.com/yonchu/zsh-vcs-prompt via
 # https://github.com/olivierverdier/zsh-git-prompt/issues/23#issuecomment-9913745
