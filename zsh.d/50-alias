@@ -206,7 +206,7 @@ alias   vt100='export TERM=vt100'
 ### Package Management ###
 alias aptitude-just-recommended='aptitude -o "Aptitude::Pkg-Display-Limit=!?reverse-depends(~i) ( ?reverse-recommends(~i) | ?reverse-suggests(~i) ) !?reverse-recommends(^abe-) !?reverse-suggests(^abe-) ~M !?essential"'
 alias aptitude-also-via-dependency='aptitude -o "Aptitude::Pkg-Display-Limit=~i !~M ( ?reverse-depends(~i) | ?reverse-recommends(~i) | ?reverse-suggests(~i) ) !?essential"'
-alias aptitude-review-unmarkauto-libraries='aptitude -o "Aptitude::Pkg-Display-Limit=( ^lib !-dev$ !-dbg$ !-utils$ !-tools$ !-bin$ !-doc$ !-progs$ !-clients$ !-examples$ !^libreoffice | -data$ | -common$ | -base$ !^r-base ) !~M"'
+alias aptitude-review-unmarkauto-libraries='aptitude -o "Aptitude::Pkg-Display-Limit=( ^lib !-dev$ !-dbg$ !-utils$ !-tools$ !-bin$ !-doc$ !-progs$ !-clients$ !-examples$ !^libreoffice | -data$ | -common$ | -base$ !^r-base ) !~M ~i"'
 alias aptitude-upgradable-to-experimental='aptitude -o "Aptitude::Pkg-Display-Limit=~i ?narrow(!~VCURRENT, ~Aexperimental)"'
 alias aptitude-newer-than-in-archive='aptitude -o "Aptitude::Pkg-Display-Limit=~i ?any-version(!~O.) !~U !~o"'
 
