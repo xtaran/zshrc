@@ -154,16 +154,7 @@ function mount() {
 
 # noglob aliasses
 alias	mmv='noglob mmv'
-alias	wget='noglob wget'
-alias	find='noglob find'
-alias	clive='noglob clive'
-alias	clivescan='noglob clivescan'
-alias	'youtube-dl'='noglob youtube-dl'
 alias	translate='noglob translate'
-alias	links='noglob links'
-alias	links2='noglob links2'
-alias	xlinks2='noglob xlinks2'
-alias	lynx='noglob lynx'
 
 # Compose key errors
 alias	ßh=ssh
