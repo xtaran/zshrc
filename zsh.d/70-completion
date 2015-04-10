@@ -2,6 +2,7 @@
 # /usr/share/doc/zsh/examples/ssh_completion.gz
 # /usr/share/doc/zsh/examples/ssh_completion2.gz
 # http://zshwiki.org/CompletionExamples
+# http://www.thregr.org/~wavexx/rnd/20141010-zsh_show_ambiguity/
 
 #hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[0-9]*}%%\ *}%%,*})
 #zstyle ':completion:*:hosts' hosts $hosts
@@ -12,3 +13,4 @@
 zstyle ':completion:*:*:*' hosts $ssh_config_hosts $ssh_known_hosts
 zstyle ':completion:*' special-dirs false
 zstyle ':completion:*' squeeze-slashes true
+zstyle ':completion:*' show-ambiguity true
