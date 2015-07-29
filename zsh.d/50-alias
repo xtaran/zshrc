@@ -231,6 +231,9 @@ mia-query() {
     fi
 }
 
+alias what-should-i-nmu="rc-alert -f + -d U --exclude-tags P"
+alias why-should-i-panick="how-can-i-help --old"
+
 ### Gags ###
 #alias	y='echo "Hallo, sind wir noch wach, oder sind wir wieder auf die Y-Taste gefallen? ;-)"'
 
