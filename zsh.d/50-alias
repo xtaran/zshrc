@@ -267,3 +267,11 @@ apt-rbdepends () {
     grep-dctrl -F Build-Depends "$1" -s Package /var/lib/apt/lists/*_Sources \
 	| sort -u
 }
+
+# Support for thefuck
+
+if [[ -x /usr/share/thefuck/thefuck-alias ]]; then
+    eval "$(/usr/share/thefuck/thefuck-alias)"
+elif [[ -x ''=thefuck-alias ]]; then
+    eval "$(thefuck-alias)"
+fi
