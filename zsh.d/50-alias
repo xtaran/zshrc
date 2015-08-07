@@ -272,6 +272,6 @@ apt-rbdepends () {
 
 if [[ -x /usr/share/thefuck/thefuck-alias ]]; then
     eval "$(/usr/share/thefuck/thefuck-alias)"
-elif [[ -x ''=thefuck-alias ]]; then
+elif which thefuck-alias >/dev/null; then
     eval "$(thefuck-alias)"
 fi
