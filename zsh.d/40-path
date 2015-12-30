@@ -1,4 +1,6 @@
 # -*- sh -*-
+
+# Common Unix search path
 export PATH=${PATH}:/sbin:/usr/sbin:/usr/local/bin/sbin:/usr/games:${HOME}/bin
 
 if [[ "$NISDOMAINNAME" = "phys.ethz.ch" ]]; then
@@ -13,3 +15,25 @@ if [[ -d ${HOME}/git/sans/bin ]]; then
     export PATH=${PATH}:${HOME}/git/sans/bin
 fi
 
+# Go search path, see "go help gopath"
+if [[ -d ~/.go ]]; then
+    if [[ -n "$GOPATH" ]]; then
+        export GOPATH=${HOME}/.go:${GOPATH}
+    else
+        export GOPATH=${HOME}/.go
+    fi
+    export PATH=${PATH}:${HOME}/.go/bin
+fi
+
+# Ruby Gem location
+if [[ -z "$GEM_HOME" && -d ~/.gem/ ]]; then
+    export GEM_HOME=${HOME}/.gem
+    export PATH=${PATH}:${HOME}/.gem/bin
+fi
+
+# NPM Modules localtion
+if [[ -d ~/.npm/bin ]]; then
+    export PATH=${PATH}:${HOME}/.npm/bin
+elif [[ -d ~/node_modules/.bin ]]; then
+    export PATH=${PATH}:${HOME}/node_modules/.bin
+fi
