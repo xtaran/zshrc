@@ -201,8 +201,8 @@ alias aptitude-review-unmarkauto-libraries='aptitude -o "Aptitude::Pkg-Display-L
 alias aptitude-upgradable-to-experimental='aptitude -o "Aptitude::Pkg-Display-Limit=~i ?narrow(!~VCURRENT, ~Aexperimental)"'
 alias aptitude-upgradable-to-buildd='aptitude -o "Aptitude::Pkg-Display-Limit=~i ?narrow(!~VCURRENT, ~Abuildd)"'
 alias aptitude-newer-than-in-archive='aptitude -o "Aptitude::Pkg-Display-Limit=~i ?any-version(!~O.) !~U !~o"'
-# Affected by https://bugs.debian.org/814037 and https://bugs.debian.org/814038
-alias aptitude-dpigs='aptitude -o "Aptitude::UI::Flat-View-As-First-View=true" -o "Aptitude::Pkg-Display-Limit=~i" -o "Aptitude::UI::Default-Sorting=installsize"'
+# Affected by https://bugs.debian.org/814037
+alias aptitude-dpigs='aptitude -o "Aptitude::UI::Flat-View-As-First-View=true" -o "Aptitude::Pkg-Display-Limit=~i" -o "Aptitude::UI::Default-Sorting=~installsize"'
 
 ### BTS and PTS ###
 alias btsmutt='bts --mbox show'
