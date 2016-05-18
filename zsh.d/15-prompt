@@ -77,13 +77,24 @@ is4 && [[ $NOPRECMD -eq 0 ]] && precmd () {
     # adjust title of xterm
     # see http://www.faqs.org/docs/Linux-mini/Xterm-Title.html
     [[ ${NOTITLE:-} -gt 0 ]] && return 0
+    # Make settings Depending on window manager
+    if [[ -n "$DISPLAY" && -x /usr/bin/wmname ]]; then
+        WM=$(wmname)
+    elif [[ -n "$DISPLAY" && -x /usr/bin/xwininfo ]]; then
+        WM=$(xwininfo -root | fgrep "the root window" | awk -F'"' '{print $2}')
+    fi
+    NUMBER_PATH_ELEMENTS_TITLE=''
+    if [[ "$WM" = "awesome" ]]; then
+        NUMBER_PATH_ELEMENTS_TITLE=2
+    fi
+
     case $TERM in
         (xterm*|rxvt*)
             # Axel: Don't show user and hostname if not a remote shell
             if [ -n "$_SHELL_ACCESS" ]; then
                 set_title ${(%):-"%n@%m: %~"}
             else
-                set_title ${(%):-"%2~"}
+                set_title ${(%):-"%${NUMBER_PATH_ELEMENTS_TITLE}~"}
             fi
             ;;
     esac
