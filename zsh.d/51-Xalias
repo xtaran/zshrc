@@ -16,6 +16,6 @@ if [[ "$DISPLAY" != "" ]]; then
     alias	isoxterm='xterm +lc +u8'
 
     function xlock() {
-	xscreensaver-command -lock || xtrlock || command xlock
+	xscreensaver-command -lock || i3lock -d -f -c FF8C00 || xtrlock || command xlock
     }
 fi
