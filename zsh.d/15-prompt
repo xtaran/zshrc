@@ -79,9 +79,9 @@ is4 && [[ $NOPRECMD -eq 0 ]] && precmd () {
     [[ ${NOTITLE:-} -gt 0 ]] && return 0
     # Make settings Depending on window manager
     if [[ -n "$DISPLAY" && -x /usr/bin/wmname ]]; then
-        WM=$(wmname)
+        WM=$(wmname) 2>/dev/null
     elif [[ -n "$DISPLAY" && -x /usr/bin/xwininfo ]]; then
-        WM=$(xwininfo -root | fgrep "the root window" | awk -F'"' '{print $2}')
+        WM=$(xwininfo -root | fgrep "the root window" | awk -F'"' '{print $2}')  2>/dev/null
     fi
     NUMBER_PATH_ELEMENTS_TITLE=''
     if [[ "$WM" = "awesome" ]]; then
