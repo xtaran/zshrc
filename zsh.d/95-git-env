@@ -10,8 +10,8 @@ case `hostname -f` in
 	export GIT_AUTHOR_EMAIL="abe@deuxchevaux.org"
 	;;
     *.ethz.ch)
-	export GIT_COMMITTER_EMAIL="beckert@phys.ethz.ch"
-	export GIT_AUTHOR_EMAIL="beckert@phys.ethz.ch"
+	export GIT_COMMITTER_EMAIL="axel@ethz.ch"
+	export GIT_AUTHOR_EMAIL="axel@ethz.ch"
 	;;
     *)
 	export GIT_COMMITTER_EMAIL="abe@deuxchevaux.org"
