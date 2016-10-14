@@ -9,7 +9,7 @@ case `hostname -f` in
 	export DEBUILD_DPKG_BUILDPACKAGE_OPTS="-k95930EDE"
 	;;
     *.ethz.ch)
-	export DEBEMAIL="beckert@phys.ethz.ch"
+	export DEBEMAIL="axel@ethz.ch"
 	export DEBUILD_DPKG_BUILDPACKAGE_OPTS="-k4A2E162B"
 	;;
     *)

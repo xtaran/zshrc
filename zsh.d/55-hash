@@ -4,26 +4,6 @@ if [[ -d /var/imap/a/abe ]]; then
     hash -d imap=/var/imap/a/abe
 fi
 
-if [[ "$NISDOMAINNAME" = "phys.ethz.ch" ]]; then
-    hash -d local=/pub/debian-local
-    hash -d configs=/pub/debian-local/configs
-    hash -d byhost=/pub/debian-local/configs/byHost
-    hash -d bygroup=/pub/debian-local/configs/byGroup
-
-    # All our current and probably future distributions
-    for d in etch lenny squeeze wheezy jessie karmic lucid maverick natty oneiric precise quantal raring saucy trusty utopic; do
-        if [[ -d /pub/debian-local/configs/$d ]]; then
-	    hash -d $d=/pub/debian-local/configs/$d
-        fi
-    done
-
-    # Create ~$HOST and ~$HOSTGROUP shortcuts
-    for h in /pub/debian-local/configs/byHost/*/ /pub/debian-local/configs/byGroup/*/; do
-        name=${h:t}
-	hash -d $name=$h
-    done
-fi
-
 if [[ -d /usr/share/doc/debian-policy ]]; then
     hash -d policy=/usr/share/doc/debian-policy
 fi
