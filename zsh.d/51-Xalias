@@ -21,7 +21,7 @@ if [[ "$DISPLAY" != "" ]]; then
            xscreensaver-command -time 2>&1 | fgrep -qv "no screensaver is running"; then
 	    xscreensaver-command -lock
         elif [[ -x /usr/bin/i3lock ]]; then
-            i3lock -d -f -c FF8C00
+            i3lock -d -c FF8C00
         elif [[ -x /usr/bin/xtrlock ]]; then
             xtrlock
         elif [[ -x /usr/bin/xlock ]]; then
