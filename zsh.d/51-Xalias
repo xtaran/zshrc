@@ -26,7 +26,7 @@ if [[ "$DISPLAY" != "" ]]; then
             xtrlock
         elif [[ -x /usr/bin/xlock ]]; then
             command xlock
-        elif [[ -x /usr/bin/xtrlock ]]; then
+        elif [[ -x /usr/bin/slock ]]; then
             slock
         fi
     }
