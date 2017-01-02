@@ -22,10 +22,8 @@ alias	v=vcsh
 alias	z=zile
 
 # Two character aliases
-alias	 eg='egrep --color=auto'
 function ff() { find . -name "$@" }
 alias    ga='git annex'
-alias	 gr='fgrep --color=auto'
 alias	 qu='quota -v'
 alias	 tn=telnet
 alias	 to=touch
@@ -165,10 +163,14 @@ alias lssmall=ls -lhS
 alias lsnew=ls -lhtr
 alias lsold=ls -lht
 
-# grep with color by default
-alias	grep='grep --color=auto'
-alias	fgrep='fgrep --color=auto'
-alias	egrep='egrep --color=auto'
+# grep with color by default with GNU grep only (especially not with BusyBox' grep applet
+if grep --version > /dev/null 2>&1; then
+    alias	eg='egrep --color=auto'
+    alias	gr='fgrep --color=auto'
+    alias	grep='grep --color=auto'
+    alias	fgrep='fgrep --color=auto'
+    alias	egrep='egrep --color=auto'
+fi
 
 # OpenSSL
 for i in sha512 sha256 sha1 md5; do
