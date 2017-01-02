@@ -74,10 +74,3 @@ else
 	export BROWSER="$ABROWSER"
     fi
 fi
-
-# Needed if /bin/hostname is not present
-if [ ! -x /bin/hostname -a -r /proc/sys/kernel/hostname ]; then
-    hostname() {
-        cat /proc/sys/kernel/hostname
-    }
-fi
