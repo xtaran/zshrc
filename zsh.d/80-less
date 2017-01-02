@@ -1,1 +1,3 @@
-eval `lessfile`
+if which lessfile > /dev/null; then
+    eval `lessfile`
+fi
