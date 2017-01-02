@@ -27,7 +27,10 @@ alias    ga='git annex'
 alias	 qu='quota -v'
 alias	 tn=telnet
 alias	 to=touch
-function df() { command df -TP "$@" | column -t }
+
+if which column > /dev/null; then
+    function df() { command df -TP "$@" | column -t }
+fi
 
 alias	mx="nslookup -sil -q=mx"
 alias	ns="nslookup -sil -q=ns"
