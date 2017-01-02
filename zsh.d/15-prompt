@@ -14,7 +14,17 @@ else
 fi
 
 # Show distribution's codename in the prompt
-DISTRIBUTION_CODENAME=`lsb_release -cs`
+if [[ -x x/usr/bin/lsb_release ]]; then
+    DISTRIBUTION_CODENAME=`lsb_release -cs`
+elif grep -qE '^DISTRIB_CODENAME=' /etc/*release; then
+    RELEASE_FILE=$(grep -lE '^DISTRIB_CODENAME=' /etc/*release)
+    for rf in $RELEASE_FILE; do
+        . $rf
+    done
+    DISTRIBUTION_CODENAME="$DISTRIB_CODENAME"
+else
+    DISTRIBUTION_CODENAME=$(uname)
+fi
 
 # Check how to current shell has been reached
 case $TERM in
