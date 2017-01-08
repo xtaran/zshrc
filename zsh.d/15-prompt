@@ -14,7 +14,7 @@ else
 fi
 
 # Show distribution's codename in the prompt
-if [[ -x x/usr/bin/lsb_release ]]; then
+if [[ -x /usr/bin/lsb_release ]]; then
     DISTRIBUTION_CODENAME=`lsb_release -cs`
 elif grep -qE '^DISTRIB_CODENAME=' /etc/*release; then
     RELEASE_FILE=$(grep -lE '^DISTRIB_CODENAME=' /etc/*release)
