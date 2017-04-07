@@ -7,7 +7,10 @@ zle -N bracketed-paste bracketed-paste-magic
 zstyle :bracketed-paste-magic paste-init backward-extend-paste
 
 cd () {
-        if [[ -f ${1} ]]
+        if [[ -n "${2}" ]]
+        then
+                builtin cd ${1} ${2}
+        elif [[ -f ${1} ]]
         then
                 [[ ! -e ${1:h} ]] && return 1
                 print "Correcting ${1} to ${1:h}"
