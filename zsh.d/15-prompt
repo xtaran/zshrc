@@ -22,6 +22,12 @@ elif grep -qE '^DISTRIB_CODENAME=' /etc/*release; then
         . $rf
     done
     DISTRIBUTION_CODENAME="$DISTRIB_CODENAME"
+elif grep -qE '^NAME=' /etc/*release; then
+    RELEASE_FILE=$(grep -lE '^NAME=' /etc/*release)
+    for rf in $RELEASE_FILE; do
+        . $rf
+    done
+    DISTRIBUTION_CODENAME="$NAME $VERSION_ID"
 else
     DISTRIBUTION_CODENAME=$(uname)
 fi
