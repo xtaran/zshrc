@@ -3,6 +3,7 @@
 export GIT_EDITOR=zile
 export GIT_COMMITTER_NAME="Axel Beckert"
 export GIT_AUTHOR_NAME="Axel Beckert"
+export GPG_TTY=$(tty)
 
 case `hostname -f` in
     metisse.ethz.ch|tux-nslu2.ethz.ch|kote*.ethz.ch|*.deuxchevaux.org|*.noone.org)
