@@ -2,7 +2,7 @@
 # Do not warn about old skel dot-files anymore
 GRML_WARN_SKEL=0
 
-if which acpi > /dev/null; then
+if which acpi > /dev/null 2>&1; then
     __tmp_acpi="`acpi 2>&1`"
     if [ "$__tmp_acpi" = "" -o  \
 	 "$__tmp_acpi" = "No support for device type: battery" \
@@ -28,13 +28,13 @@ EDITORS=(
 )
 
 for ed in $EDITORS; do
-    if which "$ed" > /dev/null; then
+    if which "$ed" > /dev/null 2>&1; then
 	export EDITOR="$ed"
 	break
     fi
 done
 
-if which emacsclient > /dev/null; then
+if which emacsclient > /dev/null 2>&1; then
     export EDITOR="emacsclient -a $EDITOR"
 fi
 
@@ -54,7 +54,7 @@ XBROWSERS=(
 
 # Check which browsers are installed and use the most preferred one
 for tb in $TEXTBROWSERS; do
-    if which "$tb" > /dev/null; then
+    if which "$tb" > /dev/null 2>&1; then
 	export ABROWSER="$tb"
 	break
     fi
@@ -65,7 +65,7 @@ if [[ -z "$DISPLAY" ]]; then
     export BROWSER="$ABROWSER"
 else
     for xb in $XBROWSERS; do
-	if which "$xb" > /dev/null; then
+	if which "$xb" > /dev/null 2>&1; then
 	    export BROWSER="$xb"
 	    break
 	fi

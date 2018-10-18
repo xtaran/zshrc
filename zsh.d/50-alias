@@ -28,7 +28,7 @@ alias	 qu='quota -v'
 alias	 tn=telnet
 alias	 to=touch
 
-if which column > /dev/null; then
+if which column > /dev/null 2>&1; then
     function df() { command df -TP "$@" | column -t }
 fi
 
@@ -91,9 +91,9 @@ alias	nsl=nslookup
 alias	ooo=openoffice
 alias	OOo=openoffice
 
-if which ack > /dev/null; then
+if which ack > /dev/null 2>&1; then
     alias   gnf='ack --passthru'
-elif which ack-grep > /dev/null; then
+elif which ack-grep > /dev/null 2>&1; then
     alias   ack=ack-grep
     alias   gnf='ack-grep --passthru'
 fi
@@ -215,17 +215,17 @@ alias btsmutt='bts --mbox show'
 # TODO: Remove links and patch tracker section (but not the ubuntu
 # section) as well as footer
 debpts() {
-    if which netrik > /dev/null; then
+    if which netrik > /dev/null 2>&1; then
         netrik --no-builtin-http --dump http://packages.qa.debian.org/$1
-    elif which w3m > /dev/null; then
+    elif which w3m > /dev/null 2>&1; then
         w3m -dump http://packages.qa.debian.org/$1
-    elif which links > /dev/null; then
+    elif which links > /dev/null 2>&1; then
         links -dump -html-numbered-links 0 http://packages.qa.debian.org/$1
-    elif which links2 > /dev/null; then
+    elif which links2 > /dev/null 2>&1; then
         links2 -dump -html-numbered-links 0 http://packages.qa.debian.org/$1
-    elif which elinks > /dev/null; then
+    elif which elinks > /dev/null 2>&1; then
         elinks -dump -no-numbering http://packages.qa.debian.org/$1
-    elif which lynx > /dev/null; then
+    elif which lynx > /dev/null 2>&1; then
         lynx -dump -nolist http://packages.qa.debian.org/$1
     fi 2>&1 | perl -ne '$links_seen = 1 if /^(\s*|\e\S*)links(\s*|\e\S*)$/; print unless $links_seen or /jump to|history\s+graph|^\s*Link:|URL:http:|^\e\S*[<>]\e\S*$/;' | uniq | less -RSXE
 }
