@@ -2,3 +2,6 @@
 if alias lsw 2>&1 > /dev/null; then
     unalias lsw
 fi
+if type trans | fgrep -q 'is a shell function'; then
+    unfunction trans
+fi
