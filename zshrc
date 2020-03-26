@@ -2,6 +2,10 @@
 #
 # With ideas from grml and Freak
 
+# Needed for Emacs' TRAMP mode, as it otherwise will be confused by
+# complex prompts
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+
 # Needed if /bin/hostname is not present
 if [ ! -x /bin/hostname -a -r /proc/sys/kernel/hostname ]; then
     hostname() {
