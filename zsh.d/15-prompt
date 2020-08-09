@@ -14,7 +14,7 @@ else
 fi
 
 # Show distribution's codename in the prompt
-if grep -qF 'Red Hat Enterprise Linux' /etc/redhat-release; then
+if [[ -f /etc/redhat-release ]] && grep -qF 'Red Hat Enterprise Linux' /etc/redhat-release; then
     DISTRIBUTION_CODENAME=$(awk '{print "RHEL "$7}' /etc/redhat-release)
 elif [[ -x /usr/bin/lsb_release ]]; then
     DISTRIBUTION_CODENAME=`lsb_release -cs`
