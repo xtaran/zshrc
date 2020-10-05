@@ -139,7 +139,7 @@ function afsp() {
 }
 
 # Five character aliases
-alias    cgrep='ack-grep --passthru'
+alias    cgrep='ack --passthru'
 alias	 deurl='$HOME/bin/url_decode.pl'
 function perlv()	{ perl -le "use $1; print "'$'"$1"'::VERSION;' }
 alias	 acsrc='apt-cache showsrc'
