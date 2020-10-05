@@ -139,6 +139,7 @@ function afsp() {
 }
 
 # Five character aliases
+alias    agrep='patool search'
 alias    cgrep='ack --passthru'
 alias	 deurl='$HOME/bin/url_decode.pl'
 function perlv()	{ perl -le "use $1; print "'$'"$1"'::VERSION;' }
