@@ -170,11 +170,11 @@ alias lsold=ls -lht
 
 # grep with color by default with GNU grep only (especially not with BusyBox' grep applet
 if grep --version > /dev/null 2>&1; then
-    alias	eg='egrep --color=auto'
-    alias	gr='fgrep --color=auto'
+    alias	eg='grep -E --color=auto'
+    alias	gr='grep -F --color=auto'
     alias	grep='grep --color=auto'
-    alias	fgrep='fgrep --color=auto'
-    alias	egrep='egrep --color=auto'
+    alias	fgrep='grep -F --color=auto'
+    alias	egrep='grep -E --color=auto'
 fi
 
 # OpenSSL
