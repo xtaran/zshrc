@@ -149,7 +149,7 @@ alias    amend='git commit --amend'
 salias	 aguma='aptitude unmarkauto'
 function mount() {
     if [[ $# -eq 0 ]]; then
-	command mount | column -t
+	command mount | column -t | less -FS
     else
 	command mount "$@"
     fi
