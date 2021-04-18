@@ -13,6 +13,6 @@ if [[ -d /var/cache/pbuilder/result ]]; then
 fi
 
 # From corekeeper
-if [[ -d /var/log/core ]]; then
-    hash -d core=/var/log/core
+if [[ -d /var/crash ]]; then
+    hash -d crash=/var/crash
 fi
