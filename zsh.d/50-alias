@@ -11,7 +11,7 @@
 # One character aliases
 alias	c=cat
 #unfunction d
-alias   d='dirs -v'
+alias   d=colordiff
 alias	g=git
 alias   l=less
 alias	m=mutt
@@ -82,11 +82,13 @@ function lpr() { command lpr "$@"; lpq }
 alias	cls=clear # Yeah, that's from DOS
 alias   ecn='emacsclient -n'
 alias   ecc='emacsclient -c'
+alias   eccn='emacsclient -c -n'
+alias   ecnw='emacsclient -c -nw'
 alias   ino='inotail -f'
 alias   gap='git add -p'
-alias	mpl=mplayer
-alias	mpfs='mplayer -fs'
-alias	mpau='mplayer -vo none'
+alias   gcv='git commit -v'
+alias	mpfs='mpv -fs'
+alias	mpau='mpv --vo null'
 alias	nsl=nslookup
 alias	ooo=openoffice
 alias	OOo=openoffice
