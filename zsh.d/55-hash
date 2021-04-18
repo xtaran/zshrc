@@ -1,9 +1,5 @@
 # -*- sh -*-
 
-if [[ -d /var/imap/a/abe ]]; then
-    hash -d imap=/var/imap/a/abe
-fi
-
 if [[ -d /usr/share/doc/debian-policy ]]; then
     hash -d policy=/usr/share/doc/debian-policy
 fi
