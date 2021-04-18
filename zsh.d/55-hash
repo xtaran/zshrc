@@ -8,6 +8,10 @@ if [[ -d /usr/share/doc/developers-reference ]]; then
     hash -d reference=/usr/share/doc/developers-reference
 fi
 
+if [[ -d /var/cache/pbuilder/result ]]; then
+    hash -d pbuilder=/var/cache/pbuilder/result
+fi
+
 # From corekeeper
 if [[ -d /var/log/core ]]; then
     hash -d core=/var/log/core
