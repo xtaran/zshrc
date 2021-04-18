@@ -55,7 +55,6 @@ if alias ag > /dev/null; then unalias ag; fi
 
 # Three character aliases
 alias	acs='apt-cache show --no-all-versions'
-alias	acsa='apt-cache show -a'
 alias	acp='apt-cache policy'
 alias	acd='apt-cache depends'
 alias	acr='apt-cache rdepends'
@@ -82,8 +81,6 @@ function lpr() { command lpr "$@"; lpq }
 alias	cls=clear # Yeah, that's from DOS
 alias   ecn='emacsclient -n'
 alias   ecc='emacsclient -c'
-alias   eccn='emacsclient -c -n'
-alias   ecnw='emacsclient -c -nw'
 alias   ino='inotail -f'
 alias   gap='git add -p'
 alias   gcv='git commit -v'
@@ -123,6 +120,7 @@ function assh() {
 compdef assh=ssh
 
 alias	root='ssh root@localhost'
+alias	acsa='apt-cache show -a'
 alias	acss='apt-cache showsrc'
 salias	agsu='aptitude safe-upgrade'
 salias	agdu='aptitude full-upgrade'
@@ -134,6 +132,7 @@ salias	agbd='aptitude build-dep'
 alias	agwn='aptitude why-not'
 alias	ccal='ccal -e'
 alias	eccn='emacsclient -c -n'
+alias   ecnw='emacsclient -c -nw'
 
 # apt-file search for Perl Modules, by gregoa
 function afsp() {
