@@ -1,6 +1,6 @@
 # -*- zsh -*-
 
-if is439; then
+if is439 && [[ "$ZSH_ARGZERO" != "zsh-static" -o "$ZSH_ARGZERO" != "zsh5-static" ]]; then
     zsyh=zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     if [[ -r /usr/share/$zsyh ]]; then
         source /usr/share/$zsyh
