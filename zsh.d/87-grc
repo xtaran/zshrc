@@ -1,0 +1,5 @@
+if [[ -e /etc/grc.zsh ]]; then . /etc/grc.zsh; fi
+
+# Don't colourise mtr
+if [[ -n "$functions[mtr]" ]]; then unfunction mtr; fi
+if [[ -n "$aliases[mtr]" ]]; then unalias mtr; fi
