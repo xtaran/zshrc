@@ -1,5 +1,7 @@
 if [[ -r /etc/grc.zsh ]]; then . /etc/grc.zsh; fi
 
-# Don't colourise mtr
-if [[ -n "$functions[mtr]" ]]; then unfunction mtr; fi
-if [[ -n "$aliases[mtr]" ]]; then unalias mtr; fi
+# Don't colourise neither mtr nor whois
+for f in mtr whois ; do
+    if [[ -n "$functions[$f]" ]]; then unfunction $f; fi
+    if [[ -n "$aliases[$f]" ]]; then unalias $f; fi
+done
