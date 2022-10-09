@@ -5,6 +5,7 @@
 
 if [[ "$DISPLAY" != "" ]]; then
     alias	xl=xlock
+    alias	xle='xlock; exit'
                 xv() { /usr/bin/xv "$@" & }
 
     alias	xrsh=xterm -e rsh
