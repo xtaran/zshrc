@@ -6,7 +6,18 @@
 if [[ "$DISPLAY" != "" ]]; then
     alias	xl=xlock
     alias	xle='xlock; exit'
-                xv() { /usr/bin/xv "$@" & }
+
+    alias	xv=sxiv
+    function	sxiv() {
+        if [[ -x /usr/bin/nsxiv ]]; then
+            nsxiv -a "$@" &
+        elif [[ -x /usr/bin/sxiv ]]; then
+            command sxiv -a "$@" &
+        else
+            echo Neither xsxiv nor sxiv found, please install either. 1>&2
+            return 1
+        fi
+    }
 
     alias	xrsh=xterm -e rsh
     alias	xssh=xterm -e ssh
