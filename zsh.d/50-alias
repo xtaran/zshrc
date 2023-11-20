@@ -63,7 +63,6 @@ alias	acn='apt-cache search -n'
 alias	af/='apt-file search'
 alias	afs='apt-file search'
 alias	afl='apt-file list'
-alias	afu='apt-file update'
 alias	ag/='aptitude search'
 salias	agi='aptitude install'
 salias	ag+='aptitude install'
@@ -86,7 +85,6 @@ alias   gap='git add -p'
 alias   gcv='git commit -v'
 alias	mpfs='mpv -fs'
 alias	mpau='mpv --vo null'
-alias	nsl=nslookup
 alias	ooo=openoffice
 alias	OOo=openoffice
 
@@ -122,14 +120,6 @@ compdef assh=ssh
 alias	root='ssh root@localhost'
 alias	acsa='apt-cache show -a'
 alias	acss='apt-cache showsrc'
-salias	agsu='aptitude safe-upgrade'
-salias	agdu='aptitude full-upgrade'
-salias	agma='aptitude markauto'
-salias	agum='aptitude unmarkauto'
-salias	agri='aptitude reinstall'
-salias	aguh='aptitude unhold'
-salias	agbd='aptitude build-dep'
-alias	agwn='aptitude why-not'
 alias	ccal='ccal -e'
 alias	eccn='emacsclient -c -n'
 alias   ecnw='emacsclient -c -nw'
@@ -146,7 +136,6 @@ alias	 deurl='$HOME/bin/url_decode.pl'
 function perlv()	{ perl -le "use $1; print "'$'"$1"'::VERSION;' }
 alias	 acsrc='apt-cache showsrc'
 alias    amend='git commit --amend'
-salias	 aguma='aptitude unmarkauto'
 function mount() {
     if [[ $# -eq 0 ]]; then
 	command mount | column -t | less -FS
