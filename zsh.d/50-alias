@@ -32,8 +32,8 @@ if which column > /dev/null 2>&1; then
     function df() { command df -TP "$@" | column -t }
 fi
 
-alias	mx="nslookup -sil -q=mx"
-alias	ns="nslookup -sil -q=ns"
+alias	mx="host -t mx"
+alias	ns="host -t ns"
 
 alias	ls='ls -F --color=auto'
 alias	la='ls -AF'
@@ -84,7 +84,7 @@ alias   ino='inotail -f'
 alias   gap='git add -p'
 alias   gcv='git commit -v'
 alias	mpfs='mpv -fs'
-alias	mpau='mpv --vo null'
+alias	mpau='mpv --vo=null'
 alias	ooo=openoffice
 alias	OOo=openoffice
 
