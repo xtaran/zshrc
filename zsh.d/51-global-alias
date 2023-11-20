@@ -4,3 +4,8 @@
 function sus() {
     sort "$@" | uniq -c | sort -n
 }
+
+# I need this often for sorting from the back
+function rsr() {
+    rev | sort "$@" | rev
+}
